@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+    <defs>
+        <linearGradient id="2hrrjayecb" x1="43.409%" x2="43.409%" y1="5.673%" y2="102.972%">
+            <stop offset="0%" stop-color="#FFF"/>
+            <stop offset="53.014%" stop-color="#D5DFF5"/>
+            <stop offset="100%" stop-color="#FFF"/>
+        </linearGradient>
+        <linearGradient id="4fy846bfca" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#ABB4DA"/>
+            <stop offset="24.596%" stop-color="#D5E2FF"/>
+            <stop offset="100%" stop-color="#ABB4DA"/>
+        </linearGradient>
+        <linearGradient id="ryxdgn3ewd" x1="50%" x2="50%" y1="0%" y2="88.445%">
+            <stop offset="0%" stop-color="#67749B"/>
+            <stop offset="100%" stop-color="#434A63"/>
+        </linearGradient>
+        <filter id="v7aewqf36c" width="202.4%" height="202.4%" x="-51.2%" y="-51.2%" filterUnits="objectBoundingBox">
+            <feOffset dy="3" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="4"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0.651596165 0 0 0 0 0.704610521 0 0 0 0 0.805819746 0 0 0 1 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-803 -330) translate(803 271) translate(0 59)">
+                    <circle cx="28" cy="28" r="27.5" fill="url(#2hrrjayecb)" stroke="url(#4fy846bfca)"/>
+                    <g fill="url(#ryxdgn3ewd)" filter="url(#v7aewqf36c)" transform="translate(7 7)">
+                        <g>
+                            <path d="M14.955 4.455c5.285 0 9.568 4.273 9.57 9.546 0 5.27-4.285 9.544-9.57 9.544-5.288 0-9.571-4.273-9.571-9.544 0-5.273 4.283-9.546 9.57-9.546zm0-4.455c5.915 0 10.929 3.96 12.767 9.475 1.301.763 2.187 2.218 2.187 3.888 0 2.46-1.913 4.455-4.273 4.455V8.907l.348.015c-1.895-4.382-6.116-7.438-11.03-7.438-4.91 0-9.132 3.056-11.03 7.438l.347-.015v8.911C1.911 17.818 0 15.824 0 13.363c0-1.67.882-3.125 2.187-3.888C4.026 3.96 9.04 0 14.955 0z" transform="translate(6.364 9.545)"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
