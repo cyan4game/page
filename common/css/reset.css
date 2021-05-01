@@ -13,7 +13,6 @@ html, body {
     -webkit-user-drag: none;
     background-color: #000;
     color: #121212;
-    font-size: 10px;
 }
 #app {
     font-size: 1.2em;
