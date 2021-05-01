@@ -1,5 +1,7 @@
 /* 重设一些元素的基础样式 */
-
+[v-cloak] {
+    display: none!important;
+}
 html, body {
     width: 100%;
     height: 100%;
