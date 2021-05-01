@@ -1,0 +1,47 @@
+/* 底部导航菜单 */
+
+function _loadBottomTab () {
+    Vue.component('bottom-tab', {
+        name: 'bottom-tab',
+        props: ['active'],
+        data: function () {
+            return {
+                bottomActiveIndex: 0,
+                bottomTabList: [
+                    { name: '精选', icon: 'bottom-tab-1.png', activeIcon: 'bottom-tab-active-1.png', href: '' },
+                    { name: 'VIP', icon: 'bottom-tab-2.png', activeIcon: 'bottom-tab-active-2.png', href: '' },
+                    { name: '发现', icon: 'bottom-tab-3.png', activeIcon: 'bottom-tab-active-3.png', href: '' },
+                    { name: '访问', icon: 'bottom-tab-4.png', activeIcon: 'bottom-tab-active-4.png', href: '' },
+                    { name: '我的', icon: 'bottom-tab-5.png', activeIcon: 'bottom-tab-active-5.png', href: '' }
+                ]
+            }
+        },
+        methods: {
+            // 跳转
+            bottomTabJump (item, i) {
+                this.bottomActiveIndex = i
+                // window.location.replace(item.href)
+            },
+            // 设置当前激活的下标
+            setActiveBottom (index) {
+                this.bottomActiveIndex = index
+            }
+        },
+        mounted () {
+            if (this.active) {
+                this.bottomActiveIndex = this.active
+            }
+        },
+        template: `
+        <div class="bottom-tab flex-row">
+            <div v-for="(item, i) in bottomTabList" :key="i" class="flex-1 bottom-tab-item">
+                <div class="bottom-tab-item-img" @click="bottomTabJump(item.href, i)">
+                    <img v-show="bottomActiveIndex != i" :src="'../../assets/img/' + item.icon" alt="icon">
+                    <img v-show="bottomActiveIndex == i" :src="'../../assets/img/' + item.activeIcon" alt="icon">
+                </div>
+                <div class="bottom-tab-item-name">{{item.name}}</div>
+            </div>
+        </div>
+        `
+    })
+}

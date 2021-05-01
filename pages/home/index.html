@@ -4,15 +4,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>主页</title>
+    <!-- 引入公共样式 -->
     <link rel="stylesheet" href="../../common/css/public.css" type="text/css">
+    <!-- 引入本页样式 -->
+    <link rel="stylesheet" href="./index.css" type="text/css">
 </head>
 <body>
-    主页
+    <div id="app">
+        主页
+        <!-- 底部导航，activeIndex标识激活第几个 -->
+        <bottom-tab active="0"></bottom-tab>
+    </div>
+    <!-- 引入公共脚本 -->
     <script src="../../common/js/public.js"></script>
-    <script>
-        window.onload = () => {
-            console.log(Vue)
-        }
-    </script>
+    <!-- 引入本页脚本 -->
+    <script src="./index.js"></script>
 </body>
 </html>
