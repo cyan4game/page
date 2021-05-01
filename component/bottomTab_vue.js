@@ -34,8 +34,8 @@ function _loadBottomTab () {
         },
         template: `
         <div class="bottom-tab flex-row">
-            <div v-for="(item, i) in bottomTabList" :key="i" class="flex-1 bottom-tab-item">
-                <div class="bottom-tab-item-img" @click="bottomTabJump(item.href, i)">
+            <div v-for="(item, i) in bottomTabList" :key="i" class="flex-1 bottom-tab-item" @click="bottomTabJump(item.href, i)">
+                <div class="bottom-tab-item-img" :class="bottomActiveIndex == i ? 'active-bottom-tab' : ''">
                     <img v-show="bottomActiveIndex != i" :src="'../../assets/img/' + item.icon" alt="icon">
                     <img v-show="bottomActiveIndex == i" :src="'../../assets/img/' + item.activeIcon" alt="icon">
                 </div>
