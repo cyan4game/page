@@ -1,0 +1,4 @@
+/* 引入都需要的公共css */
+@import "./reset.css";
+@import "./const.css";
+@import "./animate.css";
