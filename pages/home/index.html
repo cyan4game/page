@@ -10,8 +10,160 @@
     <link rel="stylesheet" href="./index.css" type="text/css">
 </head>
 <body>
-    <div id="app">
-        主页
+    <div id="app" class="main-page">
+        <!-- 搜索 -->
+        <div class="home-search flex-row">
+            <img class="home-search-logo" src="../../assets/img/logo.png" alt="logo">
+            <div class="home-search-box flex-1">
+                <input v-model="search" type="text" placeholder="搜您想搜 看您想看">
+                <img class="home-search-icon" src="../../assets/img/icon-search.png" alt="icon">
+            </div>
+            <img class="home-search-time" src="../../assets/img/home-top-history.png" alt="time">
+        </div>
+        <!-- 分类 -->
+        <div lass="home-types">
+            <div class="home-type-box flex-row" v-for="(type, index) in Types" :key="index">
+                <div class="home-type-left">
+                    <div class="home-type-left-inner">{{type.name}}</div>
+                </div>
+                <div class="home-type-right flex-1 flex-row">
+                    <div class="home-type-item" v-for="(item, i) in type.children" :key="i">{{item.name}}</div>
+                </div>
+            </div>
+        </div>
+        <!-- banner -->
+        <div class="home-banner">
+            <com-banner></com-banner>
+        </div>
+        <!-- 广告 -->
+        <div class="home-ad">
+            <div class="home-ad-item" v-for="(item, i) in ads" :key="i">
+                <!-- <img :src="item.pic" alt="ad"> -->
+            </div>
+        </div>
+        <!-- 精选广告 -->
+        <div class="home-push">
+            <div class="home-push-title flex-row">
+                <div class="home-push-name flex-1">澳门新葡京</div>
+                <div class="home-push-btn">多种玩法</div>
+                <div class="home-push-btn">美女陪玩</div>
+                <div class="home-push-btn">极速到账</div>
+            </div>
+            <div class="home-push-info flex-row">
+                <div class="home-push-info-name din">官网直营 注册就送8888元</div>
+                <div class="flex-row">
+                    <div class="home-push-text-btn">立即体验</div>
+                    <img class="home-push-start" src="../../assets/img/start.png" alt="start">
+                </div>
+            </div>
+            <div class="home-push-box">
+                <img src="../../assets/img/ad-push.png" alt="ad">
+            </div>
+        </div>
+        <!-- 最新视频 -->
+        <div class="home-types home-news">
+            <div class="home-types-title flex-row">
+                <div class="home-types-name">最新视频 <img class="home-types-icon-right" src="../../assets/img/icon-right.png" alt="gt"></div>
+                <div class="home-types-info">片源不断 追番不停</div>
+            </div>
+            <div class="home-types-box flex-row">
+                <div class="home-news-item" v-for="(item, i) in news" :key="i">
+                    <div class="home-news-pic home-types-pic">
+                        <img :src="item.pic" alt="img">
+                        <span class="home-types-time">{{item.time}}</span>
+                    </div>
+                    <div class="home-types-item-name">{{item.name}}</div>
+                </div>
+            </div>
+        </div>
+        <!-- 精选广告 -->
+        <div class="home-push">
+            <div class="home-push-title flex-row">
+                <div class="home-push-name flex-1">澳门新葡京</div>
+                <div class="home-push-btn">多种玩法</div>
+                <div class="home-push-btn">美女陪玩</div>
+                <div class="home-push-btn">极速到账</div>
+            </div>
+            <div class="home-push-info flex-row">
+                <div class="home-push-info-name din">官网直营 注册就送8888元</div>
+                <div class="flex-row">
+                    <div class="home-push-text-btn">立即体验</div>
+                    <img class="home-push-start" src="../../assets/img/start.png" alt="start">
+                </div>
+            </div>
+            <div class="home-push-box">
+                <img src="../../assets/img/ad-push.png" alt="ad">
+            </div>
+        </div>
+        <!-- 精选视频 -->
+        <div class="home-types home-tops">
+            <div class="home-types-title flex-row">
+                <div class="home-types-name">精选视频 <img class="home-types-icon-right" src="../../assets/img/icon-right.png" alt="gt"></div>
+                <div class="home-types-info">热血精选 精彩视频</div>
+            </div>
+            <div class="home-types-box flex-row">
+                <div class="home-tops-item" v-for="(item, i) in tops" :key="i">
+                    <div class="home-tops-pic home-types-pic">
+                        <img :src="item.pic" alt="img">
+                        <span class="home-types-time">{{item.time}}</span>
+                    </div>
+                    <div class="home-types-item-name" style="text-align: center;">{{item.name}}</div>
+                </div>
+            </div>
+        </div>
+        <!-- 情色小说 -->
+        <div class="home-types home-storys">
+            <div class="home-types-title flex-row">
+                <div class="home-types-name">情色小说 <img class="home-types-icon-right" src="../../assets/img/icon-right.png" alt="gt"></div>
+                <div class="home-types-info">穿越帝王 采阳补阴</div>
+            </div>
+            <div class="home-types-box home-storys-box flex-row">
+                <div class="home-storys-item" v-for="(item, i) in storys" :key="i">
+                    <div class="home-storys-pic home-types-pic">
+                        <img :src="item.pic" alt="img">
+                        <div class="home-storys-class" v-if="item.type">
+                            <span class="home-storys-class-icon" :style="{backgroundColor: item.type == 1 ? '#FF5252' : '#32CEFA'}"></span>
+                            {{item.type == 1 ? '短篇' : '长篇'}}
+                        </div>
+                    </div>
+                    <div class="home-types-item-name home-storys-item-name">{{item.name}}</div>
+                    <div class="home-types-item-date">{{item.date}}</div>
+                </div>
+            </div>
+        </div>
+        <!-- 有声有色 -->
+        <div class="home-types home-voices">
+            <div class="home-types-title flex-row">
+                <div class="home-types-name">有声有色 <img class="home-types-icon-right" src="../../assets/img/icon-right.png" alt="gt"></div>
+                <div class="home-types-info">有声有色 声色俱全</div>
+            </div>
+            <div class="home-types-box flex-row">
+                <div class="home-tops-item" v-for="(item, i) in voices" :key="i">
+                    <div class="home-tops-pic home-types-pic">
+                        <img :src="item.pic" alt="img">
+                        <img class="home-voices-icon" src="../../assets/img/listen.png" alt="l">
+                    </div>
+                    <div class="home-types-item-name" style="text-align: center;">{{item.name}}</div>
+                </div>
+            </div>
+        </div>
+        <!-- 热血漫画 -->
+        <div class="home-types home-cartoons">
+            <div class="home-types-title flex-row">
+                <div class="home-types-name">热血漫画 <img class="home-types-icon-right" src="../../assets/img/icon-right.png" alt="gt"></div>
+                <div class="home-types-info">独家期刊 热血高潮</div>
+            </div>
+            <div class="home-types-box home-storys-box flex-row">
+                <div class="home-storys-item" v-for="(item, i) in cartoons" :key="i">
+                    <div class="home-storys-pic home-types-pic">
+                        <img :src="item.pic" alt="img">
+                    </div>
+                    <div class="home-types-item-name home-storys-item-name">{{item.name}}</div>
+                    <div class="home-types-item-date">{{item.date}}</div>
+                </div>
+            </div>
+        </div>
+
         <!-- 底部导航，activeIndex标识激活第几个 -->
         <bottom-tab active="0"></bottom-tab>
     </div>

@@ -4,7 +4,7 @@ function _loadBottomTab () {
     Vue.component('bottom-tab', {
         name: 'bottom-tab',
         props: ['active'],
-        data: function () {
+        data: () => {
             return {
                 bottomActiveIndex: 0,
                 bottomTabList: [
