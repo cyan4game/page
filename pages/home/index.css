@@ -37,12 +37,10 @@
     position: absolute;
     right: 1.8rem;
     top: 0.2rem;
-    cursor: pointer;
 }
 .home-search-time {
     width: 2.4rem;
     height: 2.4rem;
-    cursor: pointer;
 }
 
 
@@ -78,7 +76,6 @@
 }
 .home-type-item {
     margin-left: 1rem;
-    cursor: pointer;
 }
 
 
@@ -95,7 +92,6 @@
     background-color: #d8d8d8;
     border-radius: 0.4rem;
     margin-bottom: 0.1rem;
-    cursor: pointer;
 }
 .home-ad-item img {
     width: 100%;
@@ -140,7 +136,6 @@
 .home-push-text-btn {
     font-size: 1.3em;
     color: #32CEFA;
-    cursor: pointer;
     margin-left: 1rem;
 }
 .home-push-start {
@@ -295,7 +290,6 @@
     transform: translateX(-50%) translateY(-50%);
     width: 4.2rem!important;
     height: 4.2rem!important;
-    cursor: pointer;
 }
 
 
