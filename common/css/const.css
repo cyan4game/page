@@ -1,9 +1,14 @@
 /* 定义一些常用样式 */
 
 /* DIN-字体 */
+
+@font-face {
+    font-family: DIN;
+    src: url('../../assets/font/DIN-Bold.otf')
+}
+
 .din {
-    font-family: DIN-Bold;
-    src: url('../../assets/font/DIN-Bold.otf');
+    font-family: DIN;
 }
 
 /* 横向flex */

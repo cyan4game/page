@@ -5,7 +5,7 @@
     bottom: 0;
     left: 50%;
     z-index: 99;
-    width: 100%;
+    width: calc(100% + 2px);
     height: 5rem;
     font-size: 1em;
     max-width: 800px;
