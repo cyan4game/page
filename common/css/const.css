@@ -4,7 +4,8 @@
 
 @font-face {
     font-family: DIN;
-    src: url('../../assets/font/DIN-Bold.otf')
+    src: url('../../assets/font/DIN-Bold.otf');
+    font-display: swap;
 }
 
 .din {
@@ -36,6 +37,11 @@
     height: 0;
 }
 
+
+/* 页面颜色 */
+.bg-white {
+    background-color: #fff;
+}
 
 /* 页面布局 */
 .main-page { /* 含有bottom的页面 */
