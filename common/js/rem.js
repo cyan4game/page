@@ -10,4 +10,5 @@
         // 375px的屏幕基准像素为10px
         oHtml.style.fontSize = 10 * (width / 375) + "px";
     }
+    document.body.style.backgroundColor = '#222'
 })()

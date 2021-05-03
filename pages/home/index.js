@@ -69,6 +69,15 @@ window.onload = () => {
         el: '#app',
         data: () => {
             return {
+                imgs: {
+                    start: '../../assets/img/start.png',
+                    adPush: '../../assets/img/ad-push.png',
+                    iconRight: '../../assets/img/icon-right.png',
+                    listen: '../../assets/img/listen.png',
+                    logo: '../../assets/img/logo.png',
+                    iconSearch: '../../assets/img/icon-search.png',
+                    history: '../../assets/img/home-top-history.png'
+                },
                 search: '', // 搜索内容
                 Types,
                 ads: [ // 广告列表
@@ -124,10 +133,22 @@ window.onload = () => {
                 
             }
         },
+        methods: {
+            // 清除页面加载动画
+            cancelLoadingFrame () {
+                const Loading = document.querySelector('.page-loading')
+                if (Loading) {
+                    Loading.style.display = 'none'
+                }
+            }
+        },
         created () {
             // 应用组件
             _loadBottomTab()
             _loadComBanner()
+        },
+        mounted () {
+            this.cancelLoadingFrame()
         }
     })
 

@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="./index.css" type="text/css">
 </head>
 <body>
+    <div class="page-loading">加载动画...</div>
     <div id="app" class="main-page" v-cloak>
         <!-- 搜索 -->
         <div class="home-search flex-row">
-            <img class="home-search-logo" src="../../assets/img/logo.png" alt="logo">
+            <img class="home-search-logo" :src="imgs.logo" alt="logo">
             <div class="home-search-box flex-1">
                 <input v-model="search" type="text" placeholder="搜您想搜 看您想看">
-                <img class="home-search-icon" src="../../assets/img/icon-search.png" alt="icon">
+                <img class="home-search-icon" :src="imgs.iconSearch" alt="icon">
             </div>
-            <img class="home-search-time" src="../../assets/img/home-top-history.png" alt="time">
+            <img class="home-search-time" :src="imgs.history" alt="time">
         </div>
         <!-- 分类 -->
         <div lass="home-types">
@@ -53,17 +54,17 @@
                 <div class="home-push-info-name din">官网直营 注册就送8888元</div>
                 <div class="flex-row">
                     <div class="home-push-text-btn">立即体验</div>
-                    <img class="home-push-start" src="../../assets/img/start.png" alt="start">
+                    <img class="home-push-start" :src="imgs.start" alt="start">
                 </div>
             </div>
             <div class="home-push-box">
-                <img src="../../assets/img/ad-push.png" alt="ad">
+                <img :src="imgs.adPush" alt="ad">
             </div>
         </div>
         <!-- 最新视频 -->
         <div class="home-types home-news">
             <div class="home-types-title flex-row">
-                <div class="home-types-name">最新视频 <img class="home-types-icon-right" src="../../assets/img/icon-right.png" alt="gt"></div>
+                <div class="home-types-name">最新视频 <img class="home-types-icon-right" :src="imgs.iconRight" alt="gt"></div>
                 <div class="home-types-info">片源不断 追番不停</div>
             </div>
             <div class="home-types-box flex-row">
@@ -88,17 +89,17 @@
                 <div class="home-push-info-name din">官网直营 注册就送8888元</div>
                 <div class="flex-row">
                     <div class="home-push-text-btn">立即体验</div>
-                    <img class="home-push-start" src="../../assets/img/start.png" alt="start">
+                    <img class="home-push-start" :src="imgs.start" alt="start">
                 </div>
             </div>
             <div class="home-push-box">
-                <img src="../../assets/img/ad-push.png" alt="ad">
+                <img :src="imgs.adPush" alt="ad">
             </div>
         </div>
         <!-- 精选视频 -->
         <div class="home-types home-tops">
             <div class="home-types-title flex-row">
-                <div class="home-types-name">精选视频 <img class="home-types-icon-right" src="../../assets/img/icon-right.png" alt="gt"></div>
+                <div class="home-types-name">精选视频 <img class="home-types-icon-right" :src="imgs.iconRight" alt="gt"></div>
                 <div class="home-types-info">热血精选 精彩视频</div>
             </div>
             <div class="home-types-box flex-row">
@@ -114,7 +115,7 @@
         <!-- 情色小说 -->
         <div class="home-types home-storys">
             <div class="home-types-title flex-row">
-                <div class="home-types-name">情色小说 <img class="home-types-icon-right" src="../../assets/img/icon-right.png" alt="gt"></div>
+                <div class="home-types-name">情色小说 <img class="home-types-icon-right" :src="imgs.iconRight" alt="gt"></div>
                 <div class="home-types-info">穿越帝王 采阳补阴</div>
             </div>
             <div class="home-types-box home-storys-box flex-row">
@@ -134,14 +135,14 @@
         <!-- 有声有色 -->
         <div class="home-types home-voices">
             <div class="home-types-title flex-row">
-                <div class="home-types-name">有声有色 <img class="home-types-icon-right" src="../../assets/img/icon-right.png" alt="gt"></div>
+                <div class="home-types-name">有声有色 <img class="home-types-icon-right" :src="imgs.iconRight" alt="gt"></div>
                 <div class="home-types-info">有声有色 声色俱全</div>
             </div>
             <div class="home-types-box flex-row">
                 <div class="home-tops-item" v-for="(item, i) in voices" :key="i">
                     <div class="home-tops-pic home-types-pic">
                         <img :src="item.pic" alt="img">
-                        <img class="home-voices-icon" src="../../assets/img/listen.png" alt="l">
+                        <img class="home-voices-icon" :src="imgs.listen" alt="l">
                     </div>
                     <div class="home-types-item-name" style="text-align: center;">{{item.name}}</div>
                 </div>
@@ -150,7 +151,7 @@
         <!-- 热血漫画 -->
         <div class="home-types home-cartoons">
             <div class="home-types-title flex-row">
-                <div class="home-types-name">热血漫画 <img class="home-types-icon-right" src="../../assets/img/icon-right.png" alt="gt"></div>
+                <div class="home-types-name">热血漫画 <img class="home-types-icon-right" :src="imgs.iconRight" alt="gt"></div>
                 <div class="home-types-info">独家期刊 热血高潮</div>
             </div>
             <div class="home-types-box home-storys-box flex-row">
