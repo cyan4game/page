@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="./index.css" type="text/css">
 </head>
 <body>
-    <div class="page-loading" style="color: #eee">加载动画...</div>
+    <div class="page-loading"></div>
+    
     <div id="app" class="main-page" v-cloak>
         <!-- 搜索 -->
         <div class="home-search flex-row">
@@ -39,7 +40,7 @@
         <!-- 广告 -->
         <div class="home-ad">
             <div class="home-ad-item" v-for="(item, i) in ads" :key="i">
-                <!-- <img :src="item.pic" alt="ad"> -->
+                <!-- <lazy-img :src="item.pic"></lazy-img> -->
             </div>
         </div>
         <!-- 精选广告 -->
@@ -58,7 +59,7 @@
                 </div>
             </div>
             <div class="home-push-box">
-                <img :src="imgs.adPush" alt="ad">
+                <lazy-img :src="imgs.adPush"></lazy-img>
             </div>
         </div>
         <!-- 最新视频 -->
@@ -70,7 +71,7 @@
             <div class="home-types-box flex-row">
                 <div class="home-news-item" v-for="(item, i) in news" :key="i">
                     <div class="home-news-pic home-types-pic">
-                        <img :src="item.pic" alt="img">
+                        <lazy-img :src="item.pic"></lazy-img>
                         <span class="home-types-time">{{item.time}}</span>
                     </div>
                     <div class="home-types-item-name">{{item.name}}</div>

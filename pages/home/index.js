@@ -1,6 +1,7 @@
 // 加载组件
 globalAddScript('../../component/bottomTab_vue.js')
 globalAddScript('../../component/comBanner_vue.js')
+globalAddScript('../../component/comLazyImg_vue.js')
 
 window.onload = () => {
 
@@ -69,6 +70,7 @@ window.onload = () => {
         el: '#app',
         data: () => {
             return {
+                src: '../../assets/img/ad-push.png',
                 imgs: {
                     start: '../../assets/img/start.png',
                     adPush: '../../assets/img/ad-push.png',
@@ -146,6 +148,7 @@ window.onload = () => {
             // 应用组件
             _loadBottomTab()
             _loadComBanner()
+            _loadComLazyImg()
         },
         mounted () {
             this.cancelLoadingFrame()

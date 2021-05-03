@@ -93,10 +93,6 @@
     border-radius: 0.4rem;
     margin-bottom: 0.1rem;
 }
-.home-ad-item img {
-    width: 100%;
-    height: 100%;
-}
 
 
 /* home-push */
@@ -151,10 +147,6 @@
     overflow: hidden;
     border-radius: 0.4rem;
 }
-.home-push-box img {
-    width: 100%;
-    height: 100%;
-}
 
 /* home-types */
 .home-types {
@@ -183,10 +175,6 @@
 .home-types-box {
     padding-bottom: 1rem;
     flex-wrap: wrap;
-}
-.home-types-pic img {
-    width: 100%;
-    height: 100%;
 }
 
 /* home-news-item */

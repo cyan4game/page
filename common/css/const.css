@@ -42,3 +42,12 @@
     padding-bottom: 6rem;
     background-color: #fff;
 }
+.page-loading {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/img/loading.png');
+    background-size: 68% auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
