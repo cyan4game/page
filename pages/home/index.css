@@ -88,6 +88,9 @@
     bottom: 0;
     z-index: 99;
 }
+.home-books-shelf img {
+    width: 100%;
+}
 
 
 /* home-ad */
