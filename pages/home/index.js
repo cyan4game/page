@@ -78,21 +78,22 @@ window.onload = () => {
                     listen: '../../assets/img/listen.png',
                     logo: '../../assets/img/logo.png',
                     iconSearch: '../../assets/img/icon-search.png',
-                    history: '../../assets/img/home-top-history.png'
+                    history: '../../assets/img/home-top-history.png',
+                    shelf: '../../assets/img/book-shelf.png'
                 },
                 search: '', // 搜索内容
                 Types,
                 ads: [ // 广告列表
-                    { id: 1, pic: '', href: '' },
-                    { id: 1, pic: '', href: '' },
-                    { id: 1, pic: '', href: '' },
-                    { id: 1, pic: '', href: '' },
-                    { id: 1, pic: '', href: '' },
-                    { id: 1, pic: '', href: '' },
-                    { id: 1, pic: '', href: '' },
-                    { id: 1, pic: '', href: '' },
-                    { id: 1, pic: '', href: '' },
-                    { id: 1, pic: '', href: '' }
+                    { id: 1, pic: '#', href: '' },
+                    { id: 1, pic: '#', href: '' },
+                    { id: 1, pic: '#', href: '' },
+                    { id: 1, pic: '#', href: '' },
+                    { id: 1, pic: '#', href: '' },
+                    { id: 1, pic: '#', href: '' },
+                    { id: 1, pic: '#', href: '' },
+                    { id: 1, pic: '#', href: '' },
+                    { id: 1, pic: '#', href: '' },
+                    { id: 1, pic: '#', href: '' }
                 ],
                 news: [ // 最新视频
                     { id: 1, name: '美女荷官的情趣奖赏', time: '00:60:00', pic: '../../assets/img/ad-push.png', href: '' },

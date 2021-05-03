@@ -94,7 +94,7 @@
                 </div>
             </div>
             <div class="home-push-box">
-                <img :src="imgs.adPush" alt="ad">
+                <lazy-img :src="imgs.adPush"></lazy-img>
             </div>
         </div>
         <!-- 精选视频 -->
@@ -106,7 +106,7 @@
             <div class="home-types-box flex-row">
                 <div class="home-tops-item" v-for="(item, i) in tops" :key="i">
                     <div class="home-tops-pic home-types-pic">
-                        <img :src="item.pic" alt="img">
+                        <lazy-img :src="item.pic"></lazy-img>
                         <span class="home-types-time">{{item.time}}</span>
                     </div>
                     <div class="home-types-item-name" style="text-align: center;">{{item.name}}</div>
@@ -122,10 +122,14 @@
             <div class="home-types-box home-storys-box flex-row">
                 <div class="home-storys-item" v-for="(item, i) in storys" :key="i">
                     <div class="home-storys-pic home-types-pic">
-                        <img :src="item.pic" alt="img">
+                        <lazy-img :src="item.pic"></lazy-img>
+                        
                         <div class="home-storys-class" v-if="item.type">
                             <span class="home-storys-class-icon" :style="{backgroundColor: item.type == 1 ? '#FF5252' : '#32CEFA'}"></span>
                             {{item.type == 1 ? '短篇' : '长篇'}}
+                        </div>
+                        <div class="home-books-shelf">
+                            <img :src="imgs.shelf" alt="shelf">
                         </div>
                     </div>
                     <div class="home-types-item-name home-storys-item-name">{{item.name}}</div>
@@ -142,7 +146,7 @@
             <div class="home-types-box flex-row">
                 <div class="home-tops-item" v-for="(item, i) in voices" :key="i">
                     <div class="home-tops-pic home-types-pic">
-                        <img :src="item.pic" alt="img">
+                        <lazy-img :src="item.pic"></lazy-img>
                         <img class="home-voices-icon" :src="imgs.listen" alt="l">
                     </div>
                     <div class="home-types-item-name" style="text-align: center;">{{item.name}}</div>
@@ -158,7 +162,10 @@
             <div class="home-types-box home-storys-box flex-row">
                 <div class="home-storys-item" v-for="(item, i) in cartoons" :key="i">
                     <div class="home-storys-pic home-types-pic">
-                        <img :src="item.pic" alt="img">
+                        <lazy-img :src="item.pic"></lazy-img>
+                        <div class="home-books-shelf">
+                            <img :src="imgs.shelf" alt="shelf">
+                        </div>
                     </div>
                     <div class="home-types-item-name home-storys-item-name">{{item.name}}</div>
                     <div class="home-types-item-date">{{item.date}}</div>
