@@ -11,6 +11,7 @@ html, body {
     user-select: none;
     user-drag: none;
     -webkit-user-drag: none;
+    background-color: #222;
     color: #121212;
 }
 #app {
