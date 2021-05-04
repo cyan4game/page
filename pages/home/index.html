@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>主页</title>
+    <title>精选</title>
     <!-- 引入公共样式 -->
     <link rel="stylesheet" href="../../common/css/public.css" type="text/css">
     <!-- 引入本页样式 -->
@@ -35,7 +35,7 @@
         </div>
         <!-- banner -->
         <div class="home-banner bg-white">
-            <com-banner></com-banner>
+            <com-banner :titlecolor="'#32CEFA'"></com-banner>
         </div>
         <!-- 广告 -->
         <div class="home-ad">
@@ -144,8 +144,8 @@
                 <div class="home-types-info">有声有色 声色俱全</div>
             </div>
             <div class="home-types-box flex-row">
-                <div class="home-tops-item" v-for="(item, i) in voices" :key="i">
-                    <div class="home-tops-pic home-types-pic">
+                <div class="home-voices-item" v-for="(item, i) in voices" :key="i">
+                    <div class="home-voices-pic home-types-pic">
                         <lazy-img :src="item.pic"></lazy-img>
                         <img class="home-voices-icon" :src="imgs.listen" alt="l">
                     </div>

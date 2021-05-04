@@ -3,6 +3,7 @@
 function _loadComBanner () {
     Vue.component('com-banner', {
         name: 'com-banner',
+        props: ['titlecolor'],
         data: () => {
             return {
                 activeBannerIndex: 1,
@@ -64,7 +65,7 @@ function _loadComBanner () {
                         <img :src="item.img" alt="banner">
                     </div>
                     <div class="com-banner-text din">
-                        <b class="com-banner-title">{{item.title}}</b>
+                        <b class="com-banner-title" :style="{color:titlecolor}">{{item.title}}</b>
                         <span class="com-banner-info">{{item.info}}</span>
                     </div>
                 </div>
