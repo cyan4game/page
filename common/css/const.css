@@ -46,7 +46,6 @@
 /* 页面布局 */
 .main-page { /* 含有bottom的页面 */
     padding-bottom: 6rem;
-    background-color: #fff;
 }
 .page-loading {
     width: 100%;

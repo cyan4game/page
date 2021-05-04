@@ -88,15 +88,6 @@ window.onload = () => {
                 
             }
         },
-        methods: {
-            // 清除页面加载动画
-            cancelLoadingFrame () {
-                const Loading = document.querySelector('.page-loading')
-                if (Loading) {
-                    Loading.style.display = 'none'
-                }
-            }
-        },
         created () {
             // 应用组件
             _loadBottomTab()
@@ -104,7 +95,7 @@ window.onload = () => {
             _loadComLazyImg()
         },
         mounted () {
-            this.cancelLoadingFrame()
+            _cancelLoadingFrame()
         }
     })
 

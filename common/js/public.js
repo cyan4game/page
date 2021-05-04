@@ -12,10 +12,20 @@
     
 })()
 
+// 引入js
 function globalAddScript(url){
     const script = document.createElement('script');
     script.setAttribute('type','text/javascript');
     script.setAttribute('src',url);
     document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+
+// 清除加载页面
+function _cancelLoadingFrame () {
+    const Loading = document.querySelector('.page-loading')
+    if (Loading) {
+        Loading.style.display = 'none'
+    }
 }
 
