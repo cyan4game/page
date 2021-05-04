@@ -95,10 +95,10 @@
     color: #fff;
     text-align: center;
     width: 100%;
-    padding: 2rem 1.8rem 1rem 1.8rem;
+    padding: 2rem 1rem 1rem 1rem;
     font-weight: 400;
 }
 .page-loading-warning div {
     margin-bottom: 1.2rem;
-    line-height: 2.4rem;
+    line-height: 2.2rem;
 }
