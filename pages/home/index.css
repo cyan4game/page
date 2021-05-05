@@ -33,7 +33,7 @@
     height: 1.5rem;
     display: inline-block;
     position: relative;
-    top: 0.2rem;
+    top: 0.25rem;
     left: -0.4rem
 }
 .home-search-time {
@@ -62,7 +62,7 @@
     font-size: 1.4rem;
     line-height: 1.5em;
     letter-spacing: 0;
-    font-weight: 600;
+    font-weight: bold;
 }
 .home-type-right {
     flex-wrap: wrap;
@@ -70,7 +70,7 @@
     line-height: 2.4rem;
     color: #32CEFA;
     letter-spacing: 0;
-    font-weight: 600;
+    font-weight: bold;
 }
 .home-type-item {
     margin-left: 1rem;
@@ -118,7 +118,7 @@
     font-size: 1.6em;
     color: #121212;
     letter-spacing: 0;
-    font-weight: 600;
+    font-weight: bold;
     text-align: left;
 }
 .home-push-btn {
@@ -126,7 +126,7 @@
     height: 2.2rem;
     background: #32CEFA;
     border-radius: 0.2rem;
-    line-height: 2.2rem;
+    line-height: 2.4rem;
     text-align: center;
     color: #F0FDFF;
     font-size: 1em;
@@ -171,7 +171,7 @@
 .home-types-name {
     font-size: 1.6em;
     color: #121212;
-    font-weight: 600;
+    font-weight: bold;
 }
 .home-types-icon-right {
     width: 1.8rem;
@@ -206,7 +206,7 @@
     bottom: 0.4rem;
     color: #fff;
     font-size: 1.2em;
-    font-weight: 600;
+    font-weight: bold;
     z-index: 99;
 }
 .home-types-item-name {
@@ -217,7 +217,7 @@
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 /* home-tops-item */
@@ -256,7 +256,7 @@
     padding-left: 0;
     font-weight: 1.2em;
     color: #868891;
-    font-weight: 700;
+    font-weight: bold;
 }
 .home-storys-class {
     width: 5rem;
