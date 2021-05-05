@@ -1,0 +1,109 @@
+.page-loading-curr {
+    text-align: center;
+    color: #32CEFA;
+}
+.page-loading-title-1 {
+    font-size: 2.6rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    padding-top: 1.2rem;
+}
+.page-loading-title-2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+.page-loading-up {
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+}
+.page-loading-top {
+    width: 26.5rem;
+    height: 17.9rem;
+    /* margin-bottom: 0.9rem; */
+}
+.page-loading-btn {
+    width: 31.4rem;
+    height: 9rem;
+    margin-bottom: -1rem;
+}
+.page-loading-buttons {
+    width: 28.8rem;
+    height: 3.2rem;
+    line-height: 3.2rem;
+    display: flex;
+    justify-content: space-between;
+    color: #141415;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 auto 1rem auto;
+    margin-bottom: 1rem;
+}
+.page-loading-bs-item {
+    width: 13.6rem;
+    border-radius: 1.6rem;
+    height: 100%;
+    background-color: #92E7FF;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0.6rem 0 1rem;
+    align-items: center;
+}
+.page-loading-bs-item span {
+    position: relative;
+    top: 0.1rem;
+}
+.page-loading-bs-img {
+    width: 3.2rem;
+    height: 3.2rem;
+    position: relative;
+    left: 0.3rem;
+    top: -0.1rem;
+    margin-left: -0.2rem;
+}
+.page-loading-banner {
+    position: relative;
+    width: 100%;
+    height: 13.4rem;
+}
+.page-loading-banner img {
+    width: 100%;
+    height: 100%;
+}
+.page-loading-banner-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.6);
+    color: #000;
+    font-size: 1.4rem;
+    font-weight: bold;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+.page-loading-logo {
+    width: 14.7rem;
+    height: 3.2rem;
+    margin: 2.7rem auto 2rem auto;
+}
+.page-loading-info {
+    padding: 0 1.8rem;
+    font-size: 1.35rem;
+    font-weight: bold;
+    text-align: left;
+    letter-spacing: 0.05rem;
+    line-height: 2rem;
+    word-break: break-all;
+}
+.page-loading-warning {
+    background-color: #32CEFA;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding: 2rem 1rem 1rem 1rem;
+    font-weight: 400;
+}
+.page-loading-warning div {
+    margin-bottom: 1.2rem;
+    line-height: 2.2rem;
+}
