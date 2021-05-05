@@ -32,21 +32,41 @@ function _cancelLoadingFrame () {
 
 
 // 图片解密
-function _decrypt (word) {
-    const str = decodeURIComponent(word)
-    // console.log(str)
-    // const str = word
-    const aesKey = '2c4add8f849a7bea'
-    const aesVi = 'dc4b73b33e69eaff'
-    const key = aesKey
-    const iv = aesVi
-    // const key = CryptoJS.enc.Utf8.parse(aesKey)
-    // const iv = CryptoJS.enc.Utf8.parse(aesVi)
-    const decrypt = CryptoJS.AES.decrypt(str, key, {
-        iv: iv,
+const asc_key = "jeH3O1VX";
+const base_lv = "nHnsU4cX";
+function _decrypt (data) {
+    let tmpiv = CryptoJS.enc.Utf8.parse(base_lv);
+    const keyHex = CryptoJS.enc.Utf8.parse(asc_key);
+    // direct decrypt ciphertext
+    const decrypted = CryptoJS.DES.decrypt({
+        ciphertext: CryptoJS.enc.Base64.parse(data)
+    }, keyHex, {
+        iv: tmpiv,
         mode: CryptoJS.mode.CBC,
-        padding: CryptoJS.pad.Pkcs7
+        padding: CryptoJS.pad.Pkcs7,
+        formatter: CryptoJS.format.OpenSSL
+    });
+    return decrypted.toString(CryptoJS.enc.Utf8);
+}
+
+
+// 发送GET请求
+function _get (url) {
+    return new Promise(resolve => {
+        const httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', url, true);
+        httpRequest.send();
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                try {
+                    const json = httpRequest.responseText;
+                    resolve(json)
+                } catch {
+                    resolve(false)
+                }
+            } else if (httpRequest.readyState == 4) {
+                resolve(false)
+            }
+        };
     })
-    // console.log(decrypt.toString())
-    // return decrypt.toString(CryptoJS.enc.Utf8)
 }
