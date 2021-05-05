@@ -11,8 +11,13 @@ html, body {
     user-select: none;
     user-drag: none;
     -webkit-user-drag: none;
-    background-color: #222;
     color: #121212;
+    background-color: #F0FDFF;
+}
+@media (min-width: 800px) {
+    html, body {
+        background-color: #222;
+    }
 }
 #app {
     font-size: 1.2em;

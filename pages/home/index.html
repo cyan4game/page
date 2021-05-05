@@ -17,7 +17,7 @@
         <div class="home-search flex-row bg-white">
             <img class="home-search-logo" :src="imgs.logo" alt="logo">
             <div class="home-search-box flex-1">
-                <input v-model="search" type="text" placeholder="搜您想搜 看您想看">
+                <span class="home-search-text">搜您想搜 看您想看</span>
                 <img class="home-search-icon" :src="imgs.iconSearch" alt="icon">
             </div>
             <img class="home-search-time" :src="imgs.history" alt="time">
@@ -133,7 +133,7 @@
                         </div>
                     </div>
                     <div class="home-types-item-name home-storys-item-name">{{item.name}}</div>
-                    <div class="home-types-item-date">{{item.date}}</div>
+                    <div class="home-types-item-date din">{{item.date}}</div>
                 </div>
             </div>
         </div>
@@ -168,7 +168,7 @@
                         </div>
                     </div>
                     <div class="home-types-item-name home-storys-item-name">{{item.name}}</div>
-                    <div class="home-types-item-date">{{item.date}}</div>
+                    <div class="home-types-item-date din">{{item.date}}</div>
                 </div>
             </div>
         </div>

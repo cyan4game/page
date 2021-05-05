@@ -1,6 +1,7 @@
 /* 主页滚动banner */
 
 function _loadComBanner () {
+    const filters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     Vue.component('com-banner', {
         name: 'com-banner',
         props: ['titlecolor'],
@@ -18,6 +19,16 @@ function _loadComBanner () {
             }
         },
         methods: {
+            din (str) {
+                const arr = str.split('')
+                return arr.map(e => {
+                    if (filters.includes(e)) {
+                        return `<span class="din">${e}</span>`
+                    } else {
+                        return e
+                    }
+                }).join('')
+            },
             touchstart (e) {
                 this.start = e.targetTouches[0].clientX
             },
@@ -64,9 +75,9 @@ function _loadComBanner () {
                     <div class="com-banner-img">
                         <img :src="item.img" alt="banner">
                     </div>
-                    <div class="com-banner-text din">
-                        <b class="com-banner-title" :style="{color:titlecolor}">{{item.title}}</b>
-                        <span class="com-banner-info">{{item.info}}</span>
+                    <div class="com-banner-text">
+                        <b class="com-banner-title" :style="{color:titlecolor}" v-html="din(item.title)"></b>
+                        <span class="com-banner-info" v-html="din(item.info)"></span>
                     </div>
                 </div>
             </div>

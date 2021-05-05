@@ -17,7 +17,7 @@
         <div class="vip-search flex-row bg-white">
             <img class="vip-search-logo" :src="imgs.logo" alt="logo">
             <div class="vip-search-box flex-1">
-                <input v-model="search" type="text" placeholder="搜您想搜 看您想看">
+                <span class="vip-search-text">搜您想搜 看您想看</span>
                 <img class="vip-search-icon" :src="imgs.iconSearch" alt="icon">
             </div>
             <img class="vip-search-time" :src="imgs.history" alt="time">
@@ -25,7 +25,7 @@
         <!-- 分类 -->
         <div lass="vip-types">
             <div class="vip-type-box flex-row" v-for="(type, index) in Types" :key="index">
-                <div class="vip-type-left">
+                <div class="vip-type-left din">
                     <div class="vip-type-left-inner">{{type.name}}</div>
                 </div>
                 <div class="vip-type-right flex-1 flex-row">
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     <div class="vip-types-item-name vip-storys-item-name">{{item.name}}</div>
-                    <div class="vip-types-item-date">{{item.date}}</div>
+                    <div class="vip-types-item-date din">{{item.date}}</div>
                 </div>
             </div>
         </div>
@@ -137,7 +137,7 @@
                         </div>
                     </div>
                     <div class="vip-types-item-name vip-storys-item-name">{{item.name}}</div>
-                    <div class="vip-types-item-date">{{item.date}}</div>
+                    <div class="vip-types-item-date din">{{item.date}}</div>
                 </div>
             </div>
         </div>

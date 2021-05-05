@@ -23,7 +23,7 @@
 }
 .page-loading-btn {
     width: 31.4rem;
-    height: 8.5rem;
+    height: 9rem;
     margin-bottom: -1rem;
 }
 .page-loading-buttons {
@@ -33,7 +33,7 @@
     display: flex;
     justify-content: space-between;
     color: #141415;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
     margin: 0 auto 1rem auto;
     margin-bottom: 1rem;
@@ -44,8 +44,8 @@
     height: 100%;
     background-color: #92E7FF;
     display: flex;
-    justify-content: space-between;
-    padding: 0 1rem;
+    justify-content: space-around;
+    padding: 0 0.6rem 0 1rem;
     align-items: center;
 }
 .page-loading-bs-img {
@@ -84,11 +84,12 @@
 }
 .page-loading-info {
     padding: 0 1.8rem;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: 600;
     text-align: left;
-    letter-spacing: 0.06rem;
+    letter-spacing: 0.05rem;
     line-height: 2rem;
+    word-break: break-all;
 }
 .page-loading-warning {
     background-color: #32CEFA;

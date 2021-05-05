@@ -26,3 +26,6 @@
 .active-bottom-tab {
     animation: rubberBand 0.5s linear 1;
 }
+.active-bottom-text {
+    font-weight: bold;
+}
