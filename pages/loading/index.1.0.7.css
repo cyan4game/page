@@ -131,11 +131,18 @@
     background-color: #fff;
     border-radius: 0.8rem;
     text-align: center;
+    overflow: hidden;
 }
 .page-loading-dialog-qr {
+    width: 16.4rem;
+    height: 16.4rem;
     position: relative;
     top: 3.65rem;
     display: inline-block;
+}
+.page-loading-dialog-img {
+    width: 23.7rem;
+    height: 23.7rem;
 }
 .page-loading-dialog-btn {
     width: 29.4rem;

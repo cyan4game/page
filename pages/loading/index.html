@@ -7,7 +7,7 @@
     <!-- 引入公共样式 -->
     <link rel="stylesheet" href="../../common/css/public.css" type="text/css">
     <!-- 引入本页样式 -->
-    <link rel="stylesheet" href="./index.1.0.6.css" type="text/css">
+    <link rel="stylesheet" href="./index.1.0.7.css" type="text/css">
 </head>
 <body>
     <div class="page-loading"></div>
@@ -62,7 +62,7 @@
         <div class="page-loading-dialog" v-if="showDialog">
             <div class="page-loading-dialog-box">
                 <div class="page-loading-dialog-qrcode" id="canvas">
-                    <div id="qrcode" class="page-loading-dialog-qr"></div>
+                    <div id="qrcode" class="page-loading-dialog-qr" v-if="showRealCode"></div>
                 </div>
                 <div class="page-loading-dialog-btn" :style="{backgroundImage: saving ? `url(${imgs.yellowBtn})` : `url(${imgs.blueBtn})`}" @click="saveImg">
                     {{savingText}}
@@ -76,6 +76,6 @@
     <script src="./qrcode.min.js" defer="defer"></script>
     <script src="./html2canvas.min.js" defer="defer"></script>
     <!-- 引入本页脚本 -->
-    <script src="./index.1.0.6.js"></script>
+    <script src="./index.1.0.7.js"></script>
 </body>
 </html>
