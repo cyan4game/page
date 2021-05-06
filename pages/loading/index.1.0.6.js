@@ -64,7 +64,6 @@ window.onload = () => {
             },
             // 截图到相册
             saveCanvas () {
-                alert(1)
                 html2canvas(document.querySelector('#canvas'), {
                     allowTaint: true
                 }).then(canvas => {
@@ -73,7 +72,7 @@ window.onload = () => {
                     const url = URL.createObjectURL(blob)
                     const a = document.createElement('a')
                     a.href = imgUrl
-                    a.download = 'MAOMI.png'
+                    a.download = 'MAOMI'
                     const e = document.createEvent('MouseEvents')
                     e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
                     a.dispatchEvent(e)
