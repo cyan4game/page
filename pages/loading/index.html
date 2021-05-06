@@ -62,7 +62,7 @@
         <div class="page-loading-dialog" v-if="showDialog">
             <div class="page-loading-dialog-box">
                 <div class="page-loading-dialog-qrcode" id="canvas">
-                    <div id="qrcode" class="page-loading-dialog-qr" v-if="showRealCode"></div>
+                    <img class="page-loading-dialog-qr" :src="imgs.qrcodes" alt="qrcode">
                 </div>
                 <div class="page-loading-dialog-btn" :style="{backgroundImage: saving ? `url(${imgs.yellowBtn})` : `url(${imgs.blueBtn})`}" @click="saveImg">
                     {{savingText}}
@@ -72,9 +72,6 @@
     </div>
     <!-- 引入公共脚本 -->
     <script src="../../common/js/public.js"></script>
-    <!-- 引入依赖 -->
-    <script src="./qrcode.min.js" defer="defer"></script>
-    <script src="./html2canvas.min.js" defer="defer"></script>
     <!-- 引入本页脚本 -->
     <script src="./index.1.0.7.js"></script>
 </body>

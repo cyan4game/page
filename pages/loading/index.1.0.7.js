@@ -1,3 +1,5 @@
+const qr_url = 'https://cyan4game.github.io/winf.github.io/assets/img/maomi_qrcode.jpg'
+
 window.onload = () => {
     const vm = new Vue({
         el: '#app',
@@ -18,7 +20,8 @@ window.onload = () => {
                     banner2: '../../assets/img/page-loading-banner2.jpg',
                     logo: '../../assets/img/logo.png',
                     blueBtn: '../../assets/img/blue-btn.png',
-                    yellowBtn: '../../assets/img/yellow-btn.png'
+                    yellowBtn: '../../assets/img/yellow-btn.png',
+                    qrcodes: qr_url
                 }
             }
         },
@@ -30,16 +33,6 @@ window.onload = () => {
             // 打开弹窗
             open () {
                 this.showDialog = true
-                setTimeout(() => {
-                    this.qrcode = new QRCode('qrcode', {
-                        text: 'www.8df96.com',
-                        width: 16.4 * this.getRem(),
-                        height: 16.4 * this.getRem(),
-                        colorDark : '#32CEFA',
-                        colorLight : '#fff',
-                        correctLevel : QRCode.CorrectLevel.H
-                    })
-                }, 0)
             },
             // 获取rem
             getRem () {
@@ -66,18 +59,15 @@ window.onload = () => {
                     this.savingText = '点击保存'
                 }, 2000)
             },
-            // 截图到相册
+            // 保存到相册
             saveCanvas () {
-                alert(1)
-                html2canvas(document.querySelector('#canvas'), {
-                    allowTaint: true
-                }).then(canvas => {
-                    const imgUrl = canvas.toDataURL('image/jpeg')
-                    const a = document.createElement('a')
-                    a.href = imgUrl
-                    a.download = 'MAOMI'
-                    a.click()
-                })
+                const a = document.createElement('a')
+                a.href = qr_url
+                a.setAttribute('href', qr_url)
+                a.setAttribute('download', 'MAOMI')
+                const evobj = document.createEvent('MouseEvents')
+                evobj.initMouseEvent('click',true,true,window,0,0,0,0,0,false,false,true,false,0,null)
+                a.dispatchEvent(evobj)
             }
         },
         mounted () {
