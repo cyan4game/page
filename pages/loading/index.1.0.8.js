@@ -28,7 +28,7 @@ window.onload = () => {
         methods: {
             // 点击进入
             handleIn () {
-                window.location.href('../home/index.html')
+                window.location.href = '../home/index.html'
             },
             // 打开弹窗
             open () {

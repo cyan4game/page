@@ -21,7 +21,7 @@ function _loadBottomTab () {
             bottomTabJump (item, i) {
                 this.bottomActiveIndex = i
                 if (!item.href) return
-                window.location.href(item.href)
+                window.location.href = item.href
             },
             // 设置当前激活的下标
             setActiveBottom (index) {
