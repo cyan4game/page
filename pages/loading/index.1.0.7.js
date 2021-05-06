@@ -39,9 +39,6 @@ window.onload = () => {
                         colorLight : '#fff',
                         correctLevel : QRCode.CorrectLevel.H
                     })
-                    setTimeout(() => {
-                        this.replaceCanvas()
-                    }, 100)
                 }, 0)
             },
             // 获取rem
@@ -50,21 +47,6 @@ window.onload = () => {
                 const width = oHtml.clientWidth
                 // 375px的屏幕基准像素为10px
                 return 10 * (width / 375)
-            },
-            // 替换canvas为图片
-            replaceCanvas () {
-                html2canvas(document.querySelector('#canvas'), {
-                    allowTaint: true
-                }).then(canvas => {
-                    const imgUrl = canvas.toDataURL('image/jpeg')
-                    console.log(imgUrl)
-                    const img = document.createElement('img')
-                    img.src = imgUrl
-                    img.className = 'page-loading-dialog-img'
-                    const canvasDom = document.querySelector('#canvas')
-                    canvasDom.appendChild(img)
-                    this.showRealCode = false
-                })
             },
             // 保存图片
             saveImg () {
@@ -86,25 +68,16 @@ window.onload = () => {
             },
             // 截图到相册
             saveCanvas () {
-                const img = document.querySelector('.page-loading-dialog-img')
-                const a = document.createElement('a')
-                a.href = img.src
-                a.download = 'MAOMI.jpg'
-                a.click()
-                // html2canvas(document.querySelector('#canvas'), {
-                //     allowTaint: true
-                // }).then(canvas => {
-                //     const imgUrl = canvas.toDataURL('image/png')
-                //     const blob=new Blob([''], {type:'application/octet-stream'})
-                //     const url = URL.createObjectURL(blob)
-                //     
-                //     
-                //     
-                //     const e = document.createEvent('MouseEvents')
-                //     e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
-                //     a.dispatchEvent(e)
-                //     URL.revokeObjectURL(url)
-                // })
+                alert(1)
+                html2canvas(document.querySelector('#canvas'), {
+                    allowTaint: true
+                }).then(canvas => {
+                    const imgUrl = canvas.toDataURL('image/jpeg')
+                    const a = document.createElement('a')
+                    a.href = imgUrl
+                    a.download = 'MAOMI'
+                    a.click()
+                })
             }
         },
         mounted () {
