@@ -68,11 +68,21 @@ window.onload = () => {
                     allowTaint: true
                 }).then(canvas => {
                     const imgUrl = canvas.toDataURL('image/png')
-                    let a = document.createElement('a')
-                    const e = new MouseEvent('click')
+                    // let a = document.createElement('a')
+                    // const e = new MouseEvent('click')
+                    // a.download = 'MAOMI.png'
+                    // a.href = imgUrl     
+                    // a.dispatchEvent(e)
+
+                    var blob=new Blob([''], {type:'application/octet-stream'});
+                    var url = URL.createObjectURL(blob);
+                    var a = document.createElement('a');
+                    a.href = imgUrl;
                     a.download = 'MAOMI.png'
-                    a.href = imgUrl     
-                    a.dispatchEvent(e)
+                    var e = document.createEvent('MouseEvents');
+                    e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                    a.dispatchEvent(e);
+                    URL.revokeObjectURL(url);
                 })
             }
         },
