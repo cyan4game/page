@@ -28,7 +28,7 @@ window.onload = () => {
         methods: {
             // 点击进入
             handleIn () {
-                window.location.replace('../home/index.html')
+                window.location.href('../home/index.html')
             },
             // 打开弹窗
             open () {
@@ -48,7 +48,7 @@ window.onload = () => {
                 this.savingText = '保存成功啦(2)'
                 setTimeout(() => {
                     this.saveCanvas()
-                }, 300)
+                }, 600)
                 setTimeout(() => {
                     this.savingText = '保存成功啦(1)'
                 }, 1000)
