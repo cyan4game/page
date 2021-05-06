@@ -8,6 +8,7 @@ window.onload = () => {
                 qrcode: null,
                 saving: false,
                 savingText: '点击保存',
+                showRealCode: true,
                 imgs: {
                     top: '../../assets/img/page-loading-top.png',
                     btn: '../../assets/img/page-loading-btn.png',
@@ -38,7 +39,10 @@ window.onload = () => {
                         colorLight : '#fff',
                         correctLevel : QRCode.CorrectLevel.H
                     })
-                }, 100)
+                    setTimeout(() => {
+                        this.replaceCanvas()
+                    }, 100)
+                }, 0)
             },
             // 获取rem
             getRem () {
@@ -47,37 +51,60 @@ window.onload = () => {
                 // 375px的屏幕基准像素为10px
                 return 10 * (width / 375)
             },
+            // 替换canvas为图片
+            replaceCanvas () {
+                html2canvas(document.querySelector('#canvas'), {
+                    allowTaint: true
+                }).then(canvas => {
+                    const imgUrl = canvas.toDataURL('image/png')
+                    const img = document.createElement('img')
+                    img.src = imgUrl
+                    img.className = 'page-loading-dialog-img'
+                    const canvasDom = document.querySelector('#canvas')
+                    canvasDom.appendChild(img)
+                    this.showRealCode = false
+                })
+            },
             // 保存图片
             saveImg () {
                 if (this.saving) return
                 this.saving = true
                 this.savingText = '保存成功啦(2)'
                 setTimeout(() => {
-                    this.savingText = '保存成功啦(1)'
                     this.saveCanvas()
+                }, 300)
+                setTimeout(() => {
+                    this.savingText = '保存成功啦(1)'
                 }, 1000)
                 setTimeout(() => {
                     this.saving = false
                     this.showDialog = false
+                    this.showRealCode = true
                     this.savingText = '点击保存'
                 }, 2000)
             },
             // 截图到相册
             saveCanvas () {
-                html2canvas(document.querySelector('#canvas'), {
-                    allowTaint: true
-                }).then(canvas => {
-                    const imgUrl = canvas.toDataURL('image/png')
-                    const blob=new Blob([''], {type:'application/octet-stream'})
-                    const url = URL.createObjectURL(blob)
-                    const a = document.createElement('a')
-                    a.href = imgUrl
-                    a.download = 'MAOMI'
-                    const e = document.createEvent('MouseEvents')
-                    e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
-                    a.dispatchEvent(e)
-                    URL.revokeObjectURL(url)
-                })
+                const img = document.querySelector('.page-loading-dialog-img')
+                console.log(img.src)
+                const a = document.createElement('a')
+                a.href = img.src
+                a.download = 'MAOMI'
+                a.click()
+                // html2canvas(document.querySelector('#canvas'), {
+                //     allowTaint: true
+                // }).then(canvas => {
+                //     const imgUrl = canvas.toDataURL('image/png')
+                //     const blob=new Blob([''], {type:'application/octet-stream'})
+                //     const url = URL.createObjectURL(blob)
+                //     
+                //     
+                //     
+                //     const e = document.createEvent('MouseEvents')
+                //     e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+                //     a.dispatchEvent(e)
+                //     URL.revokeObjectURL(url)
+                // })
             }
         },
         mounted () {
