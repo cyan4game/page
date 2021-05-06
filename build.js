@@ -31,7 +31,7 @@ function addVersion (url) {
                         }
                     })
                 }
-                if (e.includes('.js')) {
+                if (e.includes('.js') && e.includes('index')) {
                     fs.rename(url + '/' + e, url + '/index.' + Config.version + '.js', err => {
                         if (err) {
                             console.log('修改' + url + '/index.js 失败！！！！！', err)
