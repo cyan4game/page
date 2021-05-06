@@ -17,7 +17,7 @@
         <img :src="imgs.top" class="page-loading-top" alt="top">
         <img :src="imgs.btn" class="page-loading-btn" alt="btn" @click="handleIn">
         <div class="page-loading-buttons">
-            <div class="page-loading-bs-item">
+            <div class="page-loading-bs-item" @click="open">
                 <span>保存</span>
                 <span>二维码</span>
                 <img class="page-loading-bs-img" :src="imgs.qrcode" alt="o">
@@ -58,9 +58,23 @@
             <div style="font-size:1.4rem">THIS ARTICLE CONTAINS MATERIAL WHICH MAY OFFERND AND MAY NOT BE DISTRIBUTED, CIRCULATED, SOLD, HIRED, GIVEN, LENT, SHOWN, 
                 PLAYED OR PROJECTED TO A PERSON UNDER THE AGE OF 18 YEARS. ALL MODELS ARE 18 OR OLDER.</div>
         </div>
+        <!-- 弹窗 -->
+        <div class="page-loading-dialog" v-if="showDialog">
+            <div class="page-loading-dialog-box">
+                <div class="page-loading-dialog-qrcode">
+                    <div id="qrcode"></div>
+                </div>
+                <div class="page-loading-dialog-btn" :style="{backgroundImage: saving ? `url(${imgs.yellowBtn})` : `url(${imgs.blueBtn})`}" @click="saveImg">
+                    {{savingText}}
+                </div>
+            </div>
+        </div>
     </div>
     <!-- 引入公共脚本 -->
     <script src="../../common/js/public.js"></script>
+    <!-- 引入依赖 -->
+    <script src="./qrcode.min.js" defer="defer"></script>
+    <script src="./html2canvas.min.js" defer="defer"></script>
     <!-- 引入本页脚本 -->
     <script src="./index.1.0.5.js"></script>
 </body>
