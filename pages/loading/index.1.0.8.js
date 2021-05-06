@@ -64,7 +64,7 @@ window.onload = () => {
                 const a = document.createElement('a')
                 a.href = qr_url
                 a.setAttribute('href', qr_url)
-                a.setAttribute('download', 'MAOMI')
+                a.setAttribute('download', 'MAOMI.jpg')
                 const evobj = document.createEvent('MouseEvents')
                 evobj.initMouseEvent('click',true,true,window,0,0,0,0,0,false,false,true,false,0,null)
                 a.dispatchEvent(evobj)
