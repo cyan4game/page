@@ -50,11 +50,11 @@ window.onload = () => {
             // 保存图片
             saveImg () {
                 if (this.saving) return
-                this.saveCanvas()
                 this.saving = true
                 this.savingText = '保存成功啦(2)'
                 setTimeout(() => {
                     this.savingText = '保存成功啦(1)'
+                    this.saveCanvas()
                 }, 1000)
                 setTimeout(() => {
                     this.saving = false
@@ -64,13 +64,28 @@ window.onload = () => {
             },
             // 截图到相册
             saveCanvas () {
-                html2canvas(document.querySelector('#qrcode')).then(canvas => {
+                let dom = document.querySelector('#canvas').cloneNode(true)
+                dom.style.width = this.imgs.width + 'px'
+                dom.style.height = this.imgs.height + 'px'
+                dom.style.maxHeight = this.imgs.height + 'px'
+                dom.style.position = 'absolute'
+                dom.style.top = '0'
+                dom.style.left = '0'
+                dom.style.transform = 'translateX(0) translateY(0)'
+                dom.id = 'capture'
+                document.body.appendChild(dom)
+                console.log(document.querySelector('#capture'))
+                html2canvas(document.querySelector('#capture'), {
+                    allowTaint: true
+                }).then(canvas => {
                     const imgUrl = canvas.toDataURL('image/png')
                     let a = document.createElement('a')
                     const e = new MouseEvent('click')
                     a.download = 'MAOMI'
                     a.href = imgUrl     
                     a.dispatchEvent(e)
+                    document.body.removeChild(dom)
+                    dom = null
                     a = null
                 })
             }

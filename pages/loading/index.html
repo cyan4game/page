@@ -61,7 +61,7 @@
         <!-- 弹窗 -->
         <div class="page-loading-dialog" v-if="showDialog">
             <div class="page-loading-dialog-box">
-                <div class="page-loading-dialog-qrcode">
+                <div class="page-loading-dialog-qrcode" id="canvas">
                     <div id="qrcode"></div>
                 </div>
                 <div class="page-loading-dialog-btn" :style="{backgroundImage: saving ? `url(${imgs.yellowBtn})` : `url(${imgs.blueBtn})`}" @click="saveImg">

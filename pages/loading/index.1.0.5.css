@@ -130,9 +130,11 @@
     height: 23.7rem;
     background-color: #fff;
     border-radius: 0.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+#qrcode {
+    position: relative;
+    left: 3.65rem;
+    top: 3.65rem;
 }
 .page-loading-dialog-btn {
     width: 29.4rem;
