@@ -130,11 +130,12 @@
     height: 23.7rem;
     background-color: #fff;
     border-radius: 0.8rem;
+    text-align: center;
 }
 .page-loading-dialog-qr {
     position: relative;
-    left: 3.65rem;
     top: 3.65rem;
+    display: inline-block;
 }
 .page-loading-dialog-btn {
     width: 29.4rem;

@@ -64,29 +64,15 @@ window.onload = () => {
             },
             // 截图到相册
             saveCanvas () {
-                let dom = document.querySelector('#canvas').cloneNode(true)
-                dom.style.width = this.imgs.width + 'px'
-                dom.style.height = this.imgs.height + 'px'
-                dom.style.maxHeight = this.imgs.height + 'px'
-                dom.style.position = 'absolute'
-                dom.style.top = '0'
-                dom.style.left = '0'
-                dom.style.transform = 'translateX(0) translateY(0)'
-                dom.id = 'capture'
-                document.body.appendChild(dom)
-                console.log(document.querySelector('#capture'))
-                html2canvas(document.querySelector('#capture'), {
+                html2canvas(document.querySelector('#canvas'), {
                     allowTaint: true
                 }).then(canvas => {
                     const imgUrl = canvas.toDataURL('image/png')
                     let a = document.createElement('a')
                     const e = new MouseEvent('click')
-                    a.download = 'MAOMI'
+                    a.download = 'MAOMI.png'
                     a.href = imgUrl     
                     a.dispatchEvent(e)
-                    document.body.removeChild(dom)
-                    dom = null
-                    a = null
                 })
             }
         },
