@@ -56,7 +56,7 @@ window.onload = () => {
                 html2canvas(document.querySelector('#canvas'), {
                     allowTaint: true
                 }).then(canvas => {
-                    const imgUrl = canvas.toDataURL('image/png')
+                    const imgUrl = canvas.toDataURL()
                     const img = document.createElement('img')
                     img.src = imgUrl
                     img.className = 'page-loading-dialog-img'
@@ -67,6 +67,7 @@ window.onload = () => {
             },
             // 保存图片
             saveImg () {
+                alert(1)
                 if (this.saving) return
                 this.saving = true
                 this.savingText = '保存成功啦(2)'
@@ -89,7 +90,7 @@ window.onload = () => {
                 console.log(img.src)
                 const a = document.createElement('a')
                 a.href = img.src
-                a.download = 'MAOMI'
+                a.download = 'MAOMI.png'
                 a.click()
                 // html2canvas(document.querySelector('#canvas'), {
                 //     allowTaint: true
