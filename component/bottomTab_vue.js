@@ -10,7 +10,7 @@ function _loadBottomTab () {
                 bottomTabList: [
                     { name: '精选', icon: 'bottom-tab-1.png', activeIcon: 'bottom-tab-active-1.png', href: '../home/index.html' },
                     { name: 'VIP专区', icon: 'bottom-tab-2.png', activeIcon: 'bottom-tab-active-2.png', href: '../vip/index.html' },
-                    { name: '发现', icon: 'bottom-tab-3.png', activeIcon: 'bottom-tab-active-3.png', href: '' },
+                    { name: '发现', icon: 'bottom-tab-3.png', activeIcon: 'bottom-tab-active-3.png', href: '../find/index.html' },
                     { name: '访问', icon: 'bottom-tab-4.png', activeIcon: 'bottom-tab-active-4.png', href: '' },
                     { name: '我的', icon: 'bottom-tab-5.png', activeIcon: 'bottom-tab-active-5.png', href: '' }
                 ]
