@@ -11,7 +11,12 @@ window.onload = () => {
         data: () => {
             return {
                 imgs: {
-                    start: '../../assets/img/start.png'
+                    title: '../../assets/img/find-title.png',
+                    search: '../../assets/img/find-search.png',
+                    hot: '../../assets/img/find-hot.png',
+                    share: '../../assets/img/find-share.png',
+                    up: '../../assets/img/find-up.png',
+                    upEd: '../../assets/img/find-up-ed.png'
                 },
                 hotSearchs: [ // 热搜
                     { id: 1, title: '五一原来是七天假期', isHot: true, isNew: false },
@@ -26,13 +31,37 @@ window.onload = () => {
                     { id: 1, name: '今日热点' },
                     { id: 2, name: '猫咪福利' },
                     { id: 3, name: '赠送VIP' }
-                ]
+                ],
+                hotTopics: [ // 热议话题
+                    { id: 1, pic: '', content: '学习使我进步，学习使我快乐，我爱工作，工作需要我。两排文案真难编辑！', share: 2422, up: 12000, isUp: false },
+                    { id: 1, pic: '', content: '学习使我进步，学习使我快乐，我爱工作，工作需要我。两排文案真难编辑！', share: 2422, up: 12000, isUp: false },
+                    { id: 1, pic: '', content: '学习使我进步，学习使我快乐，我爱工作，工作需要我。两排文案真难编辑！', share: 2422, up: 12000, isUp: true },
+                    { id: 1, pic: '', content: '学习使我进步，学习使我快乐，我爱工作，工作需要我。两排文案真难编辑！', share: 2422, up: 12000, isUp: false }
+                ],
+                links: [ // 今日话题-连接列表
+                    { id: 1, title: '草榴社区', pic: '', info: '这个贴子内容过于真实，导致社会政党，血腥暴力，违法犯罪太多，应当及时下线，请管理员及时处理否则后果很严重。', share: 2422, comment: 668, up: 12000, isUp: false },
+                    { id: 2, title: '91SEX', pic: '', info: '这个贴子内容过于真实，导致社会政党，血腥暴力，违法犯罪太多，应当及时下线，请管理员及时处理否则后果很严重。', share: 2422, comment: 668, up: 12000, isUp: false },
+                    { id: 3, title: '草榴社区', pic: '', info: '这个贴子内容过于真实，导致社会政党，血腥暴力，违法犯罪太多，应当及时下线，请管理员及时处理否则后果很严重。', share: 2422, comment: 668, up: 12000, isUp: false },
+                    { id: 4, title: '草榴社区', pic: '', info: '这个贴子内容过于真实，导致社会政党，血腥暴力，违法犯罪太多，应当及时下线，请管理员及时处理否则后果很严重。', share: 2422, comment: 668, up: 12000, isUp: false },
+                    { id: 5, title: '草榴社区', pic: '', info: '这个贴子内容过于真实，导致社会政党，血腥暴力，违法犯罪太多，应当及时下线，请管理员及时处理否则后果很严重。', share: 2422, comment: 668, up: 12000, isUp: false }
+                ],
             }
         },
         methods: {
             // 切换分类
             checkTab (item) {
                 this.activeTab = item.id
+                console.log(this.activeTab)
+            },
+            // 短数字
+            shortNum (number) {
+                if (Number(number) >= 10000) {
+                    return (Number(number) / 10000).toFixed(1) + 'w'
+                // } else if (Number(number) >= 1000) {
+                //     return (Number(number) / 1000).toFixed(1) + 'k'
+                } else {
+                    return Number(number)
+                }
             }
         },
         created () {

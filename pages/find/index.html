@@ -15,8 +15,11 @@
     <div id="app" class="main-page page-find" v-cloak>
 
         <!-- 标题部分 -->
-        <div class="page-find-title"></div>
+        <div class="page-find-title">
+            <img :src="imgs.title" alt="title">
+        </div>
         <div class="page-find-search">
+            <img class="page-find-search-icon" :src="imgs.search" alt="search">
             <span>大家都在搜：草榴社区</span>
         </div>
 
@@ -36,7 +39,61 @@
         <div class="page-find-tabs">
             <div v-for="(item, i) in tabs" :key="i" class="page-find-tab" :class="item.id == activeTab ? 'active-tab' : ''" @click="checkTab(item)">{{item.name}}</div>
         </div>
-        <div class="page-find-list"></div>
+        <div class="page-find-list">
+            <!-- 今日热点 -->
+            <div v-if="activeTab == 1" class="page-find-box">
+
+                <!-- 热议话题 -->
+                <div class="page-find-hot-topic">
+                    <div class="page-find-item-title">
+                        <img class="page-find-item-title-icon" :src="imgs.hot" alt="hot">
+                        <span>热议话题</span>
+                    </div>
+                    <div class="page-find-topic-item" v-for="(item, i) in hotTopics" :key="i">
+                        <div class="find-topic-item-info">
+                            <div class="find-topic-item-pic"></div>
+                            <div class="find-topic-item-content">{{item.content}}</div>
+                        </div>
+                        <div class="find-topic-item-controls">
+                            <div class="find-topic-item-control din">
+                                <img :src="imgs.share" alt="share" class="topic-item-control-icon">
+                                <span>{{shortNum(item.share)}}</span>
+                            </div>
+                            <div class="find-topic-item-control din" :class="item.isUp ? 'active-control' : ''">
+                                <img v-if="!item.isUp" :src="imgs.up" alt="share" class="topic-item-control-icon">
+                                <img v-if="item.isUp" :src="imgs.upEd" alt="share" class="topic-item-control-icon">
+                                <span>{{shortNum(item.up)}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 帖子列表 -->
+                <div class="page-find-links-item" v-for="(item, i) in links" :key="i">
+                    <div class="find-links-title">
+                        <span>{{item.title}}</span>
+                    </div>
+                    <div class="find-links-info">{{item.info}}</div>
+                    <div class="find-links-pic"></div>
+                    <div class="find-links-controls">
+                        <div class="find-link-control">
+                            <span>{{shortNum(item.share)}}</span>
+                        </div>
+                        <div class="find-link-control">
+                            <span>{{shortNum(item.comment)}}</span>
+                        </div>
+                        <div class="find-link-control">
+                            <span>{{shortNum(item.share)}}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 猫咪福利 -->
+            <div v-if="activeTab == 2" class="page-find-box"></div>
+            <!-- 赠送VIP -->
+            <div v-if="activeTab == 3" class="page-find-box"></div>
+        </div>
         
         <!-- 底部导航，activeIndex标识激活第几个 -->
         <bottom-tab active="2"></bottom-tab>
