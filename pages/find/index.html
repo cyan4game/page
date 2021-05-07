@@ -25,7 +25,7 @@
             <span class="page-find-hs-title">猫咪热搜：</span>
             <div class="page-find-hs-box">
                 <div class="page-find-hs-item" v-for="(item, i) in hotSearchs" :key="i">
-                    <span>{{i + 2}}&nbsp;</span>
+                    <span>{{i + 1}}&nbsp;</span>
                     <span class="page-find-hs-item-text">{{item.title}}</span>
                     <span class="page-find-hs-item-icon page-find-hs-item-hot" v-if="item.isHot">热</span>
                     <span class="page-find-hs-item-icon page-find-hs-item-new" v-if="item.isNew">新</span>
