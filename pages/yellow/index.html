@@ -10,7 +10,7 @@
 <body>
     <div class="page-loading"></div>
     <div id="app" class="page-yellow" v-cloak @touchstart="touchstart" @touchend="touchend">
-        <video controls id="video" ref="video">
+        <video controls id="video" ref="video" autoplay="autoplay" loop="loop" muted>
             <source :src="currVideo" type="audio/mpeg">
         </video>
         <span class="page-yellow-tip" v-show="loading">{{tip}}</span>
