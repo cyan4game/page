@@ -18,9 +18,18 @@
         <div class="page-find-title">
             <img :src="imgs.title" alt="title">
         </div>
-        <div class="page-find-search">
+        <div class="page-find-search" ref="search">
             <img class="page-find-search-icon" :src="imgs.search" alt="search">
             <span>大家都在搜：草榴社区</span>
+        </div>
+
+        <!-- 悬浮标题 -->
+        <div v-show="showTitleSearch" class="find-fixd-title">
+            <img :src="imgs.title2" alt="title" class="find-fixd-title-img">
+            <div class="find-fixd-title-search">
+                <img class="find-fixd-title-icon" :src="imgs.search" alt="search">
+                <span>大家都在搜：草榴社区</span>
+            </div>
         </div>
 
         <!-- 热搜 -->
@@ -70,20 +79,25 @@
 
                 <!-- 帖子列表 -->
                 <div class="page-find-links-item" v-for="(item, i) in links" :key="i">
-                    <div class="find-links-title">
+                    <div class="find-links-title din">
+                        <img :src="imgs.link" alt="link" class="find-links-icon">
                         <span>{{item.title}}</span>
                     </div>
                     <div class="find-links-info">{{item.info}}</div>
                     <div class="find-links-pic"></div>
-                    <div class="find-links-controls">
+                    <div class="find-links-controls din">
                         <div class="find-link-control">
+                            <img :src="imgs.share" alt="share" class="find-link-control-icon" />
                             <span>{{shortNum(item.share)}}</span>
                         </div>
                         <div class="find-link-control">
+                            <img :src="imgs.comment" alt="comment" class="find-link-control-icon" />
                             <span>{{shortNum(item.comment)}}</span>
                         </div>
                         <div class="find-link-control">
-                            <span>{{shortNum(item.share)}}</span>
+                            <img v-if="!item.isUp" :src="imgs.up" alt="share" class="find-link-control-icon">
+                            <img v-if="item.isUp" :src="imgs.upEd" alt="share" class="find-link-control-icon">
+                            <span>{{shortNum(item.up)}}</span>
                         </div>
                     </div>
                 </div>

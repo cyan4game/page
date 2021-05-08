@@ -160,12 +160,12 @@
     justify-content: flex-end;
     margin-bottom: 1.4rem;
     font-size: 1.4rem;
-    padding: 0 1rem;
+    padding: 0 1.6rem;
 }
 .find-topic-item-control {
     margin-left: 3rem;
     font-weight: bold;
-    width: 7rem;
+    /* width: 7rem; */
     color: #646464
 }
 .topic-item-control-icon {
@@ -192,8 +192,101 @@
     top: 0.44rem;
 }
 .page-find-links-item {
-    padding: 1.2rem;
+    padding: 1.2rem 1.2rem 2rem 1.2rem;
     border-radius: 1.2rem;
     background-color: #fff;
     margin-bottom: 1.2rem;
+}
+.find-links-title {
+    color: #323232;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+.find-links-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.2rem;
+    position: relative;
+    top: 0.34rem;
+}
+.find-links-info {
+    color: #646464;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 400;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.8rem;
+}
+.find-links-pic {
+    width: 100%;
+    height: 17.6rem;
+    border-radius: 1.2rem;
+    background-color: #f5f5f5;
+    margin-bottom: 0.8rem;
+}
+.find-links-pic img {
+    width: 100%;
+    height: 100%;
+}
+.find-links-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.find-link-control {
+    /* width: 7.6rem; */
+    text-align: left;
+    font-size: 1.4rem;
+    color: #646464;
+    font-weight: bold;
+    padding-right: 0.4rem;
+}
+.find-link-control-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    position: relative;
+    top: 0.62rem;
+}
+
+.find-fixd-title {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.4rem;
+    background-color: #32CEFA;
+    padding: 0 1.4rem;
+}
+.find-fixd-title-img {
+    height: 2.1rem;
+    margin-right: 1.1rem;
+}
+.find-fixd-title-search {
+    flex: 1;
+    height: 2.4rem;
+    background-color: #F7FEFF;
+    border-radius: 1.2rem;
+    font-size: 1.2rem;
+    color: #D2D3DD;
+    font-weight: 400;
+    line-height: 2.8rem;
+    padding: 0 1.3rem;
+}
+.find-fixd-title-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.2rem;
+    position: relative;
+    top: 0.3rem;
+
 }
