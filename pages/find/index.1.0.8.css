@@ -283,6 +283,10 @@
     padding: 0 1.3rem;
     text-align: center;
 }
+.find-fixd-title-search span {
+    position: relative;
+    top: -0.15rem;
+}
 .find-fixd-title-icon {
     width: 2rem;
     height: 2rem;
