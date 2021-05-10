@@ -70,3 +70,53 @@ function _get (url) {
         };
     })
 }
+
+
+// 复制
+function _copy (content) {
+    const aux = document.createElement('input')
+    aux.setAttribute('value', content)
+    document.body.appendChild(aux)
+    aux.select()
+    document.execCommand('copy')
+    document.body.removeChild(aux)
+}
+
+
+// 消息提示
+function _tip (message, type) {
+    let div = document.createElement('div')
+    div.innerText = message
+    div.style.cssText = `
+        position: fixed;
+        bottom: 6rem;
+        left: 50%;
+        max-width: 90%;
+        padding: 0.2rem 1.2rem;
+        line-height: 2rem;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.4rem;
+        text-align: center;
+        transform: translateX(-150%);
+        z-index: 9999;
+        background-color: #32CEFA;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        border-radius: 1rem;
+        transition: all 0.2s ease;
+        opacity: 0.95
+    `
+    document.body.appendChild(div)
+    setTimeout(() => {
+        div.style.transform = 'translateX(-50%)'
+    }, 0)
+    setTimeout(() => {
+        div.style.transform = 'translateX(150%)'
+    }, 2000)
+    setTimeout(() => {
+        document.body.removeChild(div)
+        div = null
+    }, 2400)
+}

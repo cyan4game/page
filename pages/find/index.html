@@ -12,7 +12,7 @@
 <body>
     <div class="page-loading"></div>
     
-    <div id="app" class="main-page page-find" v-cloak>
+    <div id="app" class="main-page page-find" style="padding-bottom:5rem" v-cloak>
 
         <!-- 标题部分 -->
         <div class="page-find-title">
@@ -45,68 +45,110 @@
         </div>
 
         <!-- 分类 -->
-        <div class="page-find-tabs">
-            <div v-for="(item, i) in tabs" :key="i" class="page-find-tab" :class="item.id == activeTab ? 'active-tab' : ''" @click="checkTab(item)">{{item.name}}</div>
-        </div>
-        <div class="page-find-list">
-            <!-- 今日热点 -->
-            <div v-if="activeTab == 1" class="page-find-box">
-
-                <!-- 热议话题 -->
-                <div class="page-find-hot-topic">
-                    <div class="page-find-item-title">
-                        <img class="page-find-item-title-icon" :src="imgs.hot" alt="hot">
-                        <span>热议话题</span>
-                    </div>
-                    <div class="page-find-topic-item" v-for="(item, i) in hotTopics" :key="i">
-                        <div class="find-topic-item-info">
-                            <div class="find-topic-item-pic"></div>
-                            <div class="find-topic-item-content">{{item.content}}</div>
+        <div class="find-content-box" :style="{backgroundImage: activeTab == 3 ? 'linear-gradient(127deg, #FBEBD4 2%, #F6D3A9 99%)' : ''}">
+            <div class="page-find-tabs">
+                <div v-for="(item, i) in tabs" :key="i" class="page-find-tab" :class="item.id == activeTab ? 'active-tab' : ''" @click="checkTab(item)">{{item.name}}</div>
+            </div>
+            <div class="page-find-list">
+                <!-- 今日热点 -->
+                <div v-if="activeTab == 1" class="page-find-box">
+    
+                    <!-- 热议话题 -->
+                    <div class="page-find-hot-topic">
+                        <div class="page-find-item-title">
+                            <img class="page-find-item-title-icon" :src="imgs.hot" alt="hot">
+                            <span>热议话题</span>
                         </div>
-                        <div class="find-topic-item-controls">
-                            <div class="find-topic-item-control din">
-                                <img :src="imgs.share" alt="share" class="topic-item-control-icon">
+                        <div class="page-find-topic-item" v-for="(item, i) in hotTopics" :key="i">
+                            <div class="find-topic-item-info">
+                                <div class="find-topic-item-pic"></div>
+                                <div class="find-topic-item-content">{{item.content}}</div>
+                            </div>
+                            <div class="find-topic-item-controls">
+                                <div class="find-topic-item-control din" @click="shareItem(item)">
+                                    <img :src="imgs.share" alt="share" class="topic-item-control-icon">
+                                    <span>{{shortNum(item.share)}}</span>
+                                </div>
+                                <div class="find-topic-item-control din" :class="item.isUp ? 'active-control' : ''">
+                                    <img v-if="!item.isUp" :src="imgs.up" alt="share" class="topic-item-control-icon">
+                                    <img v-if="item.isUp" :src="imgs.upEd" alt="share" class="topic-item-control-icon">
+                                    <span>{{shortNum(item.up)}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- 帖子列表 -->
+                    <div class="page-find-links-item" v-for="(item, i) in links" :key="i">
+                        <div class="find-links-title din">
+                            <img :src="imgs.link" alt="link" class="find-links-icon">
+                            <span>{{item.title}}</span>
+                        </div>
+                        <div class="find-links-info">{{item.info}}</div>
+                        <div class="find-links-pic"></div>
+                        <div class="find-links-controls din">
+                            <div class="find-link-control">
+                                <img :src="imgs.share" alt="share" class="find-link-control-icon" />
                                 <span>{{shortNum(item.share)}}</span>
                             </div>
-                            <div class="find-topic-item-control din" :class="item.isUp ? 'active-control' : ''">
-                                <img v-if="!item.isUp" :src="imgs.up" alt="share" class="topic-item-control-icon">
-                                <img v-if="item.isUp" :src="imgs.upEd" alt="share" class="topic-item-control-icon">
+                            <div class="find-link-control">
+                                <img :src="imgs.comment" alt="comment" class="find-link-control-icon" />
+                                <span>{{shortNum(item.comment)}}</span>
+                            </div>
+                            <div class="find-link-control">
+                                <img v-if="!item.isUp" :src="imgs.up" alt="share" class="find-link-control-icon">
+                                <img v-if="item.isUp" :src="imgs.upEd" alt="share" class="find-link-control-icon">
                                 <span>{{shortNum(item.up)}}</span>
                             </div>
                         </div>
                     </div>
+    
                 </div>
-
-                <!-- 帖子列表 -->
-                <div class="page-find-links-item" v-for="(item, i) in links" :key="i">
-                    <div class="find-links-title din">
-                        <img :src="imgs.link" alt="link" class="find-links-icon">
-                        <span>{{item.title}}</span>
-                    </div>
-                    <div class="find-links-info">{{item.info}}</div>
-                    <div class="find-links-pic"></div>
-                    <div class="find-links-controls din">
-                        <div class="find-link-control">
-                            <img :src="imgs.share" alt="share" class="find-link-control-icon" />
-                            <span>{{shortNum(item.share)}}</span>
+                <!-- 猫咪福利 -->
+                <div v-if="activeTab == 2" class="page-find-box">
+                    <div class="find-gift-item" v-for="(item, i) in gifts" :key="i">
+                        <div class="find-gift-top">
+                            <div class="find-gift-top-icon"></div>
+                            <span class="find-gift-title">{{item.title}}</span>
+                            <span class="find-gift-top-btn">立即体验</span>
+                            <div class="find-gift-top-icon">
+                                <img :src="imgs.link" alt="link">
+                            </div>
                         </div>
-                        <div class="find-link-control">
-                            <img :src="imgs.comment" alt="comment" class="find-link-control-icon" />
-                            <span>{{shortNum(item.comment)}}</span>
-                        </div>
-                        <div class="find-link-control">
-                            <img v-if="!item.isUp" :src="imgs.up" alt="share" class="find-link-control-icon">
-                            <img v-if="item.isUp" :src="imgs.upEd" alt="share" class="find-link-control-icon">
-                            <span>{{shortNum(item.up)}}</span>
+                        <div class="find-gift-info">{{item.info}}</div>
+                        <div class="find-gift-img"></div>
+                        <div class="find-gift-control">
+                            <span class="find-gift-code din">福利兑换码：{{item.code}}</span>
+                            <div @click="copyItem(item)" class="find-gift-control-btn" :class="item.isCopy?'find-gift-control-btn-active': ''">{{item.isCopy?'复制成功':'点击复制'}}</div>
                         </div>
                     </div>
                 </div>
-
+                <!-- 赠送VIP -->
+                <div v-if="activeTab == 3" class="page-find-box">
+                    <div style="width:100%" v-show="!isShare">
+                        <div class="find-vip-title">
+                            <img class="find-vip-title-banner" :src="imgs.vipBanner" alt="img">
+                        </div>
+                        <div class="find-vip-url">
+                            <input type="text" v-model="vipForm.url" placeholder="资源网址，根据资源的优良，决定赠送VIP额度">
+                        </div>
+                        <div class="find-vip-tip">资源介绍（<span :style="{color:vipForm.remark.length>200?'red':''}">{{vipForm.remark.length || 0}}/200</span>字）</div>
+                        <div class="find-vip-remark">
+                            <textarea maxlength="200" cols="30" rows="10" v-model="vipForm.remark" placeholder="老铁，这资源哪里爽呀，说说呢（选填）"></textarea>
+                        </div>
+                        <div class="find-vip-btn" @click="isShare = true">资源分享</div>
+                    </div>
+                    <div style="width:100%" v-if="isShare">
+                        <div class="find-thanks">
+                            <img :src="imgs.thanks" alt="thanks">
+                        </div>
+                        <div class="find-thanks-text">
+                            感谢分享，资源将在24小时内审核完成<br/>审核通过后，奖励VIP
+                        </div>
+                        <div class="find-vip-btn" @click="isShare = false">感谢分享</div>
+                    </div>
+                </div>
             </div>
-            <!-- 猫咪福利 -->
-            <div v-if="activeTab == 2" class="page-find-box"></div>
-            <!-- 赠送VIP -->
-            <div v-if="activeTab == 3" class="page-find-box"></div>
         </div>
         
         <!-- 底部导航，activeIndex标识激活第几个 -->

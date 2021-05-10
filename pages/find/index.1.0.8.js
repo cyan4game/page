@@ -19,7 +19,9 @@ window.onload = () => {
                     up: '../../assets/img/find-up.png',
                     upEd: '../../assets/img/find-up-ed.png',
                     link: '../../assets/img/find-link.png',
-                    comment: '../../assets/img/find-comment.png'
+                    comment: '../../assets/img/find-comment.png',
+                    vipBanner: '../../assets/img/find-vip-banner.png',
+                    thanks: '../../assets/img/find-thanks.png'
                 },
                 hotSearchs: [ // 热搜
                     { id: 1, title: '五一原来是七天假期', isHot: true, isNew: false },
@@ -48,7 +50,17 @@ window.onload = () => {
                     { id: 4, title: '草榴社区', pic: '', info: '这个贴子内容过于真实，导致社会政党，血腥暴力，违法犯罪太多，应当及时下线，请管理员及时处理否则后果很严重。', share: 2422, comment: 668, up: 1322000, isUp: false },
                     { id: 5, title: '草榴社区', pic: '', info: '这个贴子内容过于真实，导致社会政党，血腥暴力，违法犯罪太多，应当及时下线，请管理员及时处理否则后果很严重。', share: 2422, comment: 668, up: 12000, isUp: false }
                 ],
-                showTitleSearch: false
+                showTitleSearch: false,
+                vipForm: {
+                    url: '',
+                    remark: ''
+                },
+                isShare: false,
+                gifts: [ // 猫咪福利
+                    { id: 1, title: '黄瓜视频', icon: '', info: '人气UP主，真人认证，真人视频，社区广场，GIF、求番、女优/网红，实时发布动态，人气直播，人气主播放福利，喷血诱惑等你来看。网红，实时发布动态，人气直播，人气主播放福利，喷血诱惑等你来看。网红，实时发布动态，人气直播，人气主播放福利，喷血诱惑等你来看。', pic: '', code: 'SDFS-AER3-DFR3-DVD4-SDSD2', isCopy: false },
+                    { id: 1, title: '黄瓜视频', icon: '', info: '人气UP主，真人认证，真人视频，社区广场，GIF、求番、女优/网红，实时发布动态，人气直播，人气主播放福利，喷血诱惑等你来看。', pic: '', code: 'SDFS-AER3-DFR3-DVD4-SDSD2', isCopy: false },
+                    { id: 1, title: '黄瓜视频', icon: '', info: '人气UP主，真人认证，真人视频，社区广场，GIF、求番、女优/网红，实时发布动态，人气直播，人气主播放福利，喷血诱惑等你来看。', pic: '', code: 'SDFS-AER3-DFR3-DVD4-SDSD2', isCopy: false }
+                ]
             }
         },
         methods: {
@@ -82,6 +94,18 @@ window.onload = () => {
                 }
                 const observer = new IntersectionObserver(callback, options)
                 observer.observe(this.$refs.search)
+            },
+            // 复制
+            copyItem (item) {
+                _copy(item.code)
+                item.isCopy = true
+                setTimeout(() => {
+                    item.isCopy = false
+                }, 3000)
+            },
+            // 分享
+            shareItem (item) {
+                _tip('分享链接已复制 快去分享吧')
             }
         },
         created () {
