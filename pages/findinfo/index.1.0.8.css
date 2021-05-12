@@ -1,0 +1,230 @@
+.findinfo-title {
+    width: 100%;
+    height: 5.6rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 1rem 1rem 2rem;
+    font-size: 1.2rem;
+    color: #646464;
+    font-weight: 200;
+    background-color: #fff;
+}
+.findinfo-title-back {
+    width: 2rem;
+    height: 2rem;
+    transform: rotate(180deg);
+}
+.findinfo-title-icon {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    margin: 0 1rem;
+}
+.findinfo-title-title {
+    color: #292935;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+}
+.findinfo-title-info {
+    position: relative;
+    top: -0.1rem;
+}
+
+.findinfo-content {
+    width: 100%;
+}
+.findinfo-banner {
+    height: 20rem;
+    background-color: #f5f5f5;
+    width: 100%;
+}
+.findinfo-info {
+    width: 100%;
+    padding: 1.4rem;
+    font-size: 1.6rem;
+    color: #646464;
+}
+.findinfo-info img {
+    max-width: 100%!important;
+}
+.findinfo-tags {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 1.4rem;
+}
+.findinfo-tag {
+    background-color: #32CEFA;
+    border-radius: 0.2rem;
+    color: #fff;
+    padding: 0.2rem 0.6rem;
+    margin: 0 2rem 1.4rem 0;
+}
+
+.findinfo-comment {
+    padding: 2rem 1.6rem 0 1.6rem;
+    background-color: #fff;
+}
+.findinfo-comment-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    color: #292935;
+    font-weight: bold;
+    padding-bottom: 1.6rem;
+}
+.findinfo-comment-switch {
+    color: #9C9BAD;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+.findinfo-comment-switch img {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-left: 0.6rem;
+    position: relative;
+    top: 0.1rem
+}
+
+.findinfo-comment-item {
+    padding-bottom: 1.8rem
+}
+.comment-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
+}
+.comment-item-avatar {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+.comment-item-title {
+    flex: 1;
+    margin: 0 1rem;
+    line-height: 2rem;
+    font-size: 1.4rem;
+    color: #292935;
+}
+.comment-item-title div {
+    font-size: 1.2rem;
+    color: #9C9BAD;
+    font-weight: 200;
+}
+.comment-item-ups {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-left: 0.4rem;
+    position: relative;
+    top: -0.1rem;
+}
+.comment-item-ups img {
+    width: 100%;
+    height: 100%;
+}
+.comment-item-nums {
+    color: #292935;
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+.comment-item-body {
+    padding-left: 4rem;
+    color: #292935;
+    font-size: 1.6rem;
+    font-weight: 200;
+    margin-bottom: 1.2rem;
+}
+.comment-item-btn {
+    margin-left: 4rem;
+    background-color:  #F5F5F7;
+    padding: 0 1rem;
+    color: #292935;
+    font-weight: 400;
+    font-size: 1.2rem;
+    display: inline-block;
+    height: 2rem;
+    line-height: 1.8rem;
+    border-radius: 1rem;
+}
+.comment-item-btn img {
+    width: 1.2rem;
+    height: 1.2rem;
+    position: relative;
+    top: 0.2rem;
+}
+.findinfo-control {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    border-top: 1px solid #f7f7f7;
+    height: 5rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.6rem;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+.findinfo-control-input {
+    flex: 1;
+    overflow: hidden;
+    height: 3.3rem;
+    border-radius: 0.4rem;
+    transition: all 0.2s ease;
+}
+.findinfo-control-input input {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height: 3.3rem;
+    font-size: 1.4rem;
+    border: none;
+    outline: none;
+    background-color: #F5F5F7;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+.findinfo-control-item {
+    margin-left: 1.2rem;
+    /* width: 2.8rem; */
+    text-align: center;
+    height: 100%;
+    transition: all 0.2s ease;
+}
+.findinfo-control-item img {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    top: 1.5rem;
+}
+.findinfo-control-item-num {
+    font-size: 1rem;
+    color: #646464;
+    position: relative;
+    top: -0.1rem
+}
+.findinfo-control-big-item {
+    /* width: 6.2rem; */
+}
+.findinfo-control-big-item img {
+    width: 2.2rem;
+    height: 2.2rem;
+    top: 1.4rem;
+}
+.findinfo-control-send {
+    color: #5B92E1;
+    font-size: 1.6rem;
+    margin-left: 1.6rem;
+}

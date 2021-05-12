@@ -59,7 +59,7 @@
                             <img class="page-find-item-title-icon" :src="imgs.hot" alt="hot">
                             <span>热议话题</span>
                         </div>
-                        <div class="page-find-topic-item" v-for="(item, i) in hotTopics" :key="i">
+                        <div class="page-find-topic-item" v-for="(item, i) in hotTopics" :key="i" @click="goInfo(item)">
                             <div class="find-topic-item-info">
                                 <div class="find-topic-item-pic"></div>
                                 <div class="find-topic-item-content">{{item.content}}</div>
@@ -80,7 +80,7 @@
     
                     <!-- 帖子列表 -->
                     <div class="page-find-links-item" v-for="(item, i) in links" :key="i">
-                        <div class="find-links-title din">
+                        <div class="find-links-title din" @click="goInfo(item)">
                             <img :src="imgs.link" alt="link" class="find-links-icon">
                             <span>{{item.title}}</span>
                         </div>
@@ -106,7 +106,7 @@
                 </div>
                 <!-- 猫咪福利 -->
                 <div v-if="activeTab == 2" class="page-find-box">
-                    <div class="find-gift-item" v-for="(item, i) in gifts" :key="i">
+                    <div class="find-gift-item" v-for="(item, i) in gifts" :key="i" @click="goInfo(item)">
                         <div class="find-gift-top">
                             <div class="find-gift-top-icon"></div>
                             <span class="find-gift-title">{{item.title}}</span>

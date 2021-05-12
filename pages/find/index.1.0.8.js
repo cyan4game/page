@@ -106,6 +106,10 @@ window.onload = () => {
             // 分享
             shareItem (item) {
                 _tip('分享链接已复制 快去分享吧')
+            },
+            // 查看详情
+            goInfo (item) {
+                window.location.href = '../findinfo/index.html?query=' + encodeURIComponent(JSON.stringify(item))
             }
         },
         created () {
