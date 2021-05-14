@@ -110,6 +110,10 @@ window.onload = () => {
             // 查看详情
             goInfo (item) {
                 window.location.href = '../findinfo/index.html?query=' + encodeURIComponent(JSON.stringify(item))
+            },
+            // 跳转搜索
+            goSearch () {
+                window.location.href = '../search/index.html'
             }
         },
         created () {

@@ -18,7 +18,7 @@
         <div class="page-find-title">
             <img :src="imgs.title" alt="title">
         </div>
-        <div class="page-find-search" ref="search">
+        <div class="page-find-search" ref="search" @click="goSearch">
             <img class="page-find-search-icon" :src="imgs.search" alt="search">
             <span>大家都在搜：草榴社区</span>
         </div>
@@ -26,7 +26,7 @@
         <!-- 悬浮标题 -->
         <div v-show="showTitleSearch" class="find-fixd-title">
             <img :src="imgs.title2" alt="title" class="find-fixd-title-img">
-            <div class="find-fixd-title-search">
+            <div class="find-fixd-title-search" @click="goSearch">
                 <img class="find-fixd-title-icon" :src="imgs.search" alt="search">
                 <span>大家都在搜：草榴社区</span>
             </div>
