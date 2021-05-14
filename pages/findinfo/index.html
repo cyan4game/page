@@ -59,7 +59,7 @@
                     {{item.content}}
                 </div>
                 <div class="comment-item-btn">
-                    <span v-if="item.comments">{{item.comments}}条回复&nbsp;<img :src="imgs.right" alt=">"> </span>
+                    <span @click="openCommentChildren(item)" v-if="item.comments">{{item.comments}}条回复&nbsp;<img :src="imgs.right" alt=">"> </span>
                     <span v-else>回复</span>
                 </div>
             </div>
@@ -68,7 +68,7 @@
         <!-- 操作 -->
         <div class="findinfo-control">
             <div class="findinfo-control-input">
-                <input type="text" placeholder="槽点太多 说点啥吧" @focus="inputFocus = true" @blur="inputFocus = false">
+                <input ref="input" type="text" placeholder="槽点太多 说点啥吧" @focus="inputFocus = true" @blur="inputFocus = false">
             </div>
             <!-- 发送 -->
             <div class="findinfo-control-send" v-show="inputFocus">
@@ -90,6 +90,79 @@
             </div>
             <div class="findinfo-control-item" v-show="!inputFocus">
                 <img :src="imgs.share" alt="icon">
+            </div>
+        </div>
+
+        <!-- 子评论弹窗 -->
+        <div class="findinfo-c-children" :class="showCommentChildren?'':'findinfo-c-children-hidden'">
+            <div class="findinfo-c-content">
+                <div class="findinfo-c-title">
+                    <span>共32条回复</span>
+                    <span class="findinfo-c-title-close" @click="showCommentChildren = false">×</span>
+                </div>
+                <div class="findinfo-c-item">
+                    <div class="findinfo-c-item-header">
+                        <div class="findinfo-c-item-avatar"></div>
+                        <div class="findinfo-c-item-name">
+                            <b>南宫小小</b>
+                            <div>1天前</div>
+                        </div>
+                        <span class="findinfo-c-item-num">1.2w</span>
+                        <img class="findinfo-c-item-icon" :src="imgs.up" alt="icon">
+                    </div>
+                    <div class="findinfo-c-item-text">听说你的城市下雪了</div>
+                    <div class="findinfo-c-item-children"></div>
+                    <div class="findinfo-c-item-btn">回复</div>
+                </div>
+                <div class="findinfo-c-line"></div>
+                <div class="findinfo-c-list">
+                    <div class="findinfo-c-item">
+                        <div class="findinfo-c-item-header">
+                            <div class="findinfo-c-item-avatar"></div>
+                            <div class="findinfo-c-item-name">
+                                <b>理性认知</b>
+                                <div>1天前</div>
+                            </div>
+                            <span class="findinfo-c-item-num">865</span>
+                            <img class="findinfo-c-item-icon" :src="imgs.upEd" alt="icon">
+                        </div>
+                        <div class="findinfo-c-item-text">下雪了，你想起了谁呢？</div>
+                        <div class="findinfo-c-item-children"></div>
+                        <div class="findinfo-c-item-btn">回复</div>
+                    </div>
+                    <div class="findinfo-c-item">
+                        <div class="findinfo-c-item-header">
+                            <div class="findinfo-c-item-avatar"></div>
+                            <div class="findinfo-c-item-name">
+                                <b>六夜票</b>
+                                <div>1天前</div>
+                            </div>
+                            <span class="findinfo-c-item-num">87</span>
+                            <img class="findinfo-c-item-icon" :src="imgs.up" alt="icon">
+                        </div>
+                        <div class="findinfo-c-item-text">在咖啡的角落听雪落下的声音，静静听别人说着你的故事</div>
+                        <div class="findinfo-c-item-target">
+                            <span class="findinfo-c-item-target-name">理性认知：</span>下雪了，你想起了谁呢？下雪了，你想起了谁呢？下雪了，你想起了谁呢？
+                        </div>
+                        <div class="findinfo-c-item-btn">回复</div>
+                    </div>
+                    <div class="findinfo-c-item">
+                        <div class="findinfo-c-item-header">
+                            <div class="findinfo-c-item-avatar"></div>
+                            <div class="findinfo-c-item-name">
+                                <b>六夜票</b>
+                                <div>1天前</div>
+                            </div>
+                            <span class="findinfo-c-item-num">87</span>
+                            <img class="findinfo-c-item-icon" :src="imgs.up" alt="icon">
+                        </div>
+                        <div class="findinfo-c-item-text">在咖啡的角落听雪落下的声音，静静听别人说着你的故事</div>
+                        <div class="findinfo-c-item-target">
+                            <span class="findinfo-c-item-target-name">理性认知：</span>下雪了，你想起了谁呢？下雪了，你想起了谁呢？下雪了，你想起了谁呢？
+                        </div>
+                        <div class="findinfo-c-item-btn">回复</div>
+                    </div>
+                </div>
             </div>
         </div>
 

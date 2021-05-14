@@ -14,7 +14,7 @@ window.onload = () => {
                     commentUpEd: '../../assets/img/find-up-ed.png',
                     star: '../../assets/img/find-star.png',
                     starEd: '../../assets/img/find-star-ed.png',
-                    share: '../../assets/img/find-share.png'
+                    share: '../../assets/img/find-share.png',
                 },
                 query: {},
                 info: {
@@ -72,9 +72,14 @@ window.onload = () => {
                     ]
                 },
                 inputFocus: false,
+                showCommentChildren: false,
             }
         },
         methods: {
+            // 查看评论详情
+            openCommentChildren (item) {
+                this.showCommentChildren = true
+            },
             // 获取参数
             getQuery () {
                 this.query = JSON.parse(decodeURIComponent(location.href.split('?query=')[1]))

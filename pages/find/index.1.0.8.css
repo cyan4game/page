@@ -463,6 +463,10 @@
     transition: all .2s ease;
     padding: 0.2rem 0;
 }
+.find-gift-control-btn span {
+    position: relative;
+    top: 0.1rem;
+}
 .find-gift-control-btn-active {
     background-color: #FF7474;
 }

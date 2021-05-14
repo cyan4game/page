@@ -59,8 +59,8 @@
                             <img class="page-find-item-title-icon" :src="imgs.hot" alt="hot">
                             <span>热议话题</span>
                         </div>
-                        <div class="page-find-topic-item" v-for="(item, i) in hotTopics" :key="i" @click="goInfo(item)">
-                            <div class="find-topic-item-info">
+                        <div class="page-find-topic-item" v-for="(item, i) in hotTopics" :key="i">
+                            <div class="find-topic-item-info" @click="goInfo(item)">
                                 <div class="find-topic-item-pic"></div>
                                 <div class="find-topic-item-content">{{item.content}}</div>
                             </div>
@@ -84,10 +84,10 @@
                             <img :src="imgs.link" alt="link" class="find-links-icon">
                             <span>{{item.title}}</span>
                         </div>
-                        <div class="find-links-info">{{item.info}}</div>
-                        <div class="find-links-pic"></div>
+                        <div class="find-links-info" @click="goInfo(item)">{{item.info}}</div>
+                        <div class="find-links-pic" @click="goInfo(item)"></div>
                         <div class="find-links-controls din">
-                            <div class="find-link-control">
+                            <div class="find-link-control" @click="shareItem(item)">
                                 <img :src="imgs.share" alt="share" class="find-link-control-icon" />
                                 <span>{{shortNum(item.share)}}</span>
                             </div>
@@ -106,7 +106,7 @@
                 </div>
                 <!-- 猫咪福利 -->
                 <div v-if="activeTab == 2" class="page-find-box">
-                    <div class="find-gift-item" v-for="(item, i) in gifts" :key="i" @click="goInfo(item)">
+                    <div class="find-gift-item" v-for="(item, i) in gifts" :key="i">
                         <div class="find-gift-top">
                             <div class="find-gift-top-icon"></div>
                             <span class="find-gift-title">{{item.title}}</span>
@@ -119,7 +119,7 @@
                         <div class="find-gift-img"></div>
                         <div class="find-gift-control">
                             <span class="find-gift-code din">福利兑换码：{{item.code}}</span>
-                            <div @click="copyItem(item)" class="find-gift-control-btn" :class="item.isCopy?'find-gift-control-btn-active': ''">{{item.isCopy?'复制成功':'点击复制'}}</div>
+                            <div @click="copyItem(item)" class="find-gift-control-btn" :class="item.isCopy?'find-gift-control-btn-active': ''"><span>{{item.isCopy?'复制成功':'点击复制'}}</span></div>
                         </div>
                     </div>
                 </div>
