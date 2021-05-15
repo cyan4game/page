@@ -11,7 +11,7 @@ window.onload = () => {
         data: () => {
             return {
                 imgs: {
-                    delete: '../../assets/img/ion-delete.png',
+                    delete: '../../assets/img/icon-delete.png',
                     left: '../../assets/img/icon-left.png',
                     logo: '../../assets/img/logo.png',
                     title: '../../assets/img/find-title2.png',
@@ -47,6 +47,10 @@ window.onload = () => {
                     { id: 1, title: '草榴666社区', info: '人气UP主，真人认证，真人视频，社区广场，GIF、求番、女优/网红，实时发布动态，网红，实时发布动态，人气直播，人气主播放福利，喷血诱惑等你来看。人气直播，人气主播放福利，喷血诱惑等你来看。' },
                     { id: 1, title: '草榴666社区', info: '人气UP主，真人认证，真人视频，社区广场，GIF、求番、女优/网红，实时发布动态，人气直播，人气主播放福利，喷血诱惑等你来看。' }
                 ]
+            },
+            // 返回
+            back () {
+                window.location.href = '../find/index.html'
             }
         },
         created () {
