@@ -13,7 +13,16 @@
     .main {
       position: relative;
 /*       top: -30px; */
-      height: 200px;
+      /* height: 200px; */
+    }
+    .page-btn {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2rem;
+      max-width: 40%;
+      top: 31.6%;
+      z-index: 2;
     }
   </style>
 </head>
@@ -29,16 +38,17 @@
     var wechatAccount;
   </script>
 <div class="main">
-<img src="static/picture/bg.png" alt="" width='100%' onclick="clock()">
+<img src="static/picture/bg.png" alt="" width='100%'>
+<img src="static/picture/btn.png" alt="" onclick="clock()" class="page-btn">
 <div class="btnfuzhi public-name"></div>
 <div class="zhezhao"></div>
 <div class="success">
-<img src="static/picture/wechat_success_icon.png" alt="" class="tu1">
+<img src="static/picture/wechat_success_icon.svg" alt="" class="tu1">
 <b class="db">复制成功</b>
 <p>QQ号：<span class="zaax-wxh" id="wechatAccount"></span></p>
 <p>扫码联系微信（频繁请刷新页面）领取体验金</p>
 
-<span  onclick="linkQQ()" class="db tcBtn public-name" id="download">访问QQ2</span>
+<span  onclick="linkQQ()" class="db tcBtn public-name" id="download">访问QQ</span>
 <i onclick="closetc()"></i>
 
 </div>
@@ -134,7 +144,10 @@
     }
 
     function linkQQ () {
-      qq = '1179126168'
+      if (!qq) {
+        alert('获取qq失败')
+        return
+      }
       window.location.href=`mqqwpa://im/chat?chat_type=wpa&uin=${qq}&version=1&src_type=web&web_src=oicqzone.com`;
     }
   </script>
